@@ -181,7 +181,7 @@
         "deprecated": false
       }
     },
-    "/GetOTP": {
+    "/v1/GetOTP": {
       "post": {
         "tags": [
           "MFA"
@@ -352,7 +352,7 @@
         "deprecated": false
       }
     },
-    "/AuthenticateToken": {
+    "/v1/AuthenticateToken": {
       "post": {
         "tags": [
           "MFA"
