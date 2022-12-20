@@ -256,5 +256,11 @@
     "type": "string",
     "pattern": "([0-9]){14}|([0]){1}|()",
     "description": "Customer identification number Valid Values are : 12948435765223, 11408939762911 etc"
+  },
+  "BBAN": {
+    "type": "string",
+    "description": "Valid values of BBAN : 59200000027005, 59200000324005 etc",
+    "minLength": "14",
+    "maxLength": "14"
   }
 }

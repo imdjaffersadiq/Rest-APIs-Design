@@ -464,33 +464,32 @@
         "deprecated": false
       }
     },
-    "/ValidateAccountNumber": {
+    "/v1/ValidateAccountNumber": {
       "post": {
         "tags": [
-          "AccountsService"
+          "ACCOUNTS"
         ],
-        "summary": "ValidateAccountNumber",
-        "description": "This operation provide an option to validate the\n\t\t\t\tBBAN and IBAN",
+        "description": "This operation provide an option to validate the BBAN and IBAN",
         "operationId": "ValidateAccountNumber",
         "parameters": [
           {
-            "name": "Security",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "type": "string"
             }
           },
           {
             "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -499,11 +498,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/AccountNumberValidationRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/AccountNumberValidationRequest"
               }
             }
           },
@@ -512,16 +507,80 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/AccountNumberValidationResponse"
-                    },
-                    {}
-                  ]
+                  "$ref": "#/components/schemas/AccountNumberValidationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -530,32 +589,32 @@
         "deprecated": false
       }
     },
-    "/CreateIBAN": {
+    "/v1/CreateIBAN": {
       "post": {
         "tags": [
-          "AccountsService"
+          "ACCOUNTS"
         ],
-        "summary": "CreateIBAN",
+        "description": "This operation is used to create the IBAN",
         "operationId": "CreateIBAN",
         "parameters": [
           {
-            "name": "Security",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "type": "string"
             }
           },
           {
             "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -564,11 +623,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/IBANCreationRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/IBANCreationRequest"
               }
             }
           },
@@ -577,16 +632,80 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/IBANCreationResponse"
-                    },
-                    {}
-                  ]
+                  "$ref": "#/components/schemas/IBANCreationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -790,32 +909,32 @@
         "deprecated": false
       }
     },
-    "/GetPromoCodes": {
+    "/v1/GetPromoCodes": {
       "post": {
         "tags": [
-          "AccountsService"
+          "ACCOUNTS"
         ],
-        "summary": "GetPromoCodes",
+        "description": "This operation is used to get the PromoCodes",
         "operationId": "GetPromoCodes",
         "parameters": [
           {
-            "name": "Security",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "type": "string"
             }
           },
           {
             "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -824,11 +943,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/PromoCodesRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/PromoCodesRequest"
               }
             }
           },
@@ -837,16 +952,80 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/PromoCodesResponse"
-                    },
-                    {}
-                  ]
+                  "$ref": "#/components/schemas/PromoCodesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -4353,7 +4532,6 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
@@ -4371,33 +4549,32 @@
         "deprecated": false
       }
     },
-    "/InquireAccountSignatureStatus": {
+    "/v1/InquireAccountSignatureStatus": {
       "post": {
         "tags": [
-          "AccountsService"
+          "ACCOUNTS"
         ],
-        "summary": "InquireAccountSignatureStatus",
-        "description": "The function is used to request for the status\n\t\t\t\tinformation of an account in SigCap.",
+        "description": "The function is used to request for the status information of an account in SigCap.",
         "operationId": "InquireAccountSignatureStatus",
         "parameters": [
           {
-            "name": "Security",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "type": "string"
             }
           },
           {
             "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -4406,11 +4583,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/InquireAccountSignatureStatusRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/InquireAccountSignatureStatusRequest"
               }
             }
           },
@@ -4419,16 +4592,80 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/InquireAccountSignatureStatusResponse"
-                    },
-                    {}
-                  ]
+                  "$ref": "#/components/schemas/InquireAccountSignatureStatusResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -5958,59 +6195,42 @@
         },
         "description": ""
       },
-      "tns_AccountNumberValidationRequest": {
-        "title": "tns_AccountNumberValidationRequest",
+      "AccountNumberValidationRequestType": {
+        "title": "AccountNumberValidationRequestType",
         "required": [
           "accountId"
         ],
         "type": "object",
         "properties": {
           "accountId": {
-            "maxLength": 24,
-            "minLength": 14,
-            "pattern": "([0-9]{14})|(SA[0-9]{4}[a-zA-Z0-9]{18})",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/AccountId"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_AccountNumberValidationResponse": {
-        "title": "tns_AccountNumberValidationResponse",
+      "AccountNumberValidationResponseType": {
+        "title": "AccountNumberValidationResponseType",
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_AccountNumberValidationType"
-              }
-            ]
+            "$ref": "#/components/schemas/AccountNumberValidationType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
       },
-      "tns_AccountNumberValidationType": {
-        "title": "tns_AccountNumberValidationType",
+      "AccountNumberValidationType": {
+        "title": "AccountNumberValidationType",
         "required": [
           "isAccountValid"
         ],
         "type": "object",
         "properties": {
           "isAccountValid": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_isAccountValid"
-              }
-            ]
+            "$ref": "#/components/schemas/isAccountValid"
           }
-        },
-        "description": ""
+        }
       },
       "AccountDetailsRequestType": {
         "title": "AccountDetailsRequestType",
@@ -6041,7 +6261,7 @@
             "description": ""
           },
           "fault": {
-              "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -6598,31 +6818,31 @@
           },
           "accountAvgClBalChPer": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountAvgBalYTD": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountHeld": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountUncleared": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountBalance": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountOverdraft": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountAvailable": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountLastFinDate": {
             "$ref": "../../commonschemas/schemas.json#/DateOptional"
@@ -6662,7 +6882,7 @@
           },
           "accountAverageLastSixMonths": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountUserCode": {
             "$ref": "#/components/schemas/UserCodeType"
@@ -6672,15 +6892,15 @@
           },
           "accountSARBalance": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountSARAvailable": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountCreditLimit": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "accountGroupIndicator": {
             "minimum": 0,
@@ -6740,7 +6960,7 @@
           },
           "accountCashAdvanceAvailable": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "minBalance": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
@@ -6749,17 +6969,17 @@
           "maxBalance": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
             "description": "Max Balance- matching input ACCT_NO and for call account product type '0850' and product category '0001' for BANCS14 Accounts",
-            "default":0.0
+            "default": 0.0
           },
           "returnsAccrued": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
             "description": "Returns Accrued - matching input ACCT_NO and for call account product type '0850' and product category '0001' for BANCS14 Accounts",
-            "default":0.0
+            "default": 0.0
           },
           "profitRate": {
             "$ref": "../../commonschemas/schemas.json#/Amount",
             "description": "Profit Rate- matching input ACCT_NO and for call account product type '0850' and product category '0001' for BANCS14 Accounts",
-            "default":0.0
+            "default": 0.0
           },
           "creditReturnDate": {
             "$ref": "../../commonschemas/schemas.json#/DateOptional",
@@ -6909,19 +7129,19 @@
           },
           "overdraftAmount1": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "overdraftAmount2": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "overdraftAmount3": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           },
           "overdraftAmount4": {
             "$ref": "../../commonschemas/schemas.json#/MoneyOptional",
-            "default":0.0
+            "default": 0.0
           }
         },
         "description": ""
@@ -7450,62 +7670,45 @@
         "type": "string",
         "description": ""
       },
-      "tns_IBANCreationRequest": {
-        "title": "tns_IBANCreationRequest",
+      "IBANCreationRequestType": {
+        "title": "IBANCreationRequestType",
         "required": [
           "accountId"
         ],
         "type": "object",
         "properties": {
           "accountId": {
-            "maxLength": 14,
-            "minLength": 14,
-            "type": "string",
-            "description": "AccID Is the BANCS Account Identification\r\n\t\t\t\t\t\t\tnumber"
+            "$ref": "../../commonschemas/schemas.json#/BBAN",
+            "description": "AccID Is the BANCS Account Identification number"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_IBANCreationResponse": {
-        "title": "tns_IBANCreationResponse",
+      "IBANCreationResponseType": {
+        "title": "IBANCreationResponseType",
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_IBANCreationType"
-              },
-              {
-                "description": "Success Indication tag (generated successfully)"
-              }
-            ]
+            "$ref": "#/components/schemas/IBANCreationType",
+            "description": "Success Indication tag (generated successfully)"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
       },
-      "tns_IBANCreationType": {
-        "title": "tns_IBANCreationType",
+      "IBANCreationType": {
+        "title": "IBANCreationType",
         "required": [
           "IBAN"
         ],
         "type": "object",
         "properties": {
           "IBAN": {
-            "maxLength": 24,
-            "minLength": 14,
-            "pattern": "([0-9]{14})|(SA[0-9]{4}[a-zA-Z0-9]{18})",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/AccountId",
             "description": "IBAN Is The IBAN Account Number"
           }
-        },
-        "description": ""
+        }
       },
       "tns_StatementGenerationRequest": {
         "title": "tns_StatementGenerationRequest",
@@ -7683,42 +7886,34 @@
         },
         "description": "Success"
       },
-      "tns_PromoCodesRequest": {
-        "title": "tns_PromoCodesRequest",
+      "PromoCodesRequestType": {
+        "title": "PromoCodesRequestType",
         "type": "object",
         "properties": {
           "accountId": {
-            "maxLength": 24,
-            "minLength": 14,
-            "pattern": "([0-9]{14})|(SA[0-9]{4}[a-zA-Z0-9]{18})",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/AccountId"
           }
         },
         "description": ""
       },
-      "tns_PromoCodesResponse": {
-        "title": "tns_PromoCodesResponse",
+      "PromoCodesResponseType": {
+        "title": "PromoCodesResponseType",
         "type": "object",
         "properties": {
           "record": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_PromoCodesType"
-            },
-            "description": ""
+              "$ref": "#/components/schemas/PromoCodesType"
+            }
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
       },
-      "tns_PromoCodesType": {
-        "title": "tns_PromoCodesType",
+      "PromoCodesType": {
+        "title": "PromoCodesType",
         "required": [
           "number",
           "promoCode",
@@ -7741,8 +7936,7 @@
           "arabicDescription": {
             "type": "string"
           }
-        },
-        "description": ""
+        }
       },
       "tns_TransactionCodesRequest": {
         "title": "tns_TransactionCodesRequest",
@@ -21444,8 +21638,8 @@
         },
         "description": ""
       },
-      "tns_InquireAccountSignatureStatusRequest": {
-        "title": "tns_InquireAccountSignatureStatusRequest",
+      "InquireAccountSignatureStatusRequestType": {
+        "title": "InquireAccountSignatureStatusRequestType",
         "required": [
           "accountId"
         ],
@@ -21453,48 +21647,32 @@
         "properties": {
           "referenceId": {
             "type": "string",
-            "description": "This is a unique reference id for the\r\n\t\t\t\t\t\t\ttransaction. If the REF_ID is\r\n\t\t\t\t\t\t\tnot specified in request, the server\r\n\t\t\t\t\t\t\twill send a randomly\r\n\t\t\t\t\t\t\tgenerated unique id in response and the\r\n\t\t\t\t\t\t\tclient may use it for\r\n\t\t\t\t\t\t\tfurther requests that may be made during a\r\n\t\t\t\t\t\t\tsingle verification\r\n\t\t\t\t\t\t\tprocess. Once the verification process in\r\n\t\t\t\t\t\t\tfinished, client can\r\n\t\t\t\t\t\t\tdiscard this ID."
+            "description": "This is a unique reference id for the transaction. If the REF_ID is not specified in request, the server twill send a randomly generated unique id in response and the client may use it for tfurther requests that may be made during a single verification tprocess. Once the verification process in finished, client can discard this ID."
           },
           "applicationName": {
             "type": "string",
-            "description": "Name of application that is requesting SigCap\r\n\t\t\t\t\t\t\tservices"
+            "description": "Name of application that is requesting SigCap services"
           },
           "accountId": {
-            "maxLength": 24,
-            "minLength": 14,
-            "pattern": "([0-9]{14})|(SA[0-9]{4}[a-zA-Z0-9]{18})",
-            "type": "string",
-            "description": "Account number whose status is\r\n\t\t\t\t\t\t\trequested"
+            "$ref": "../../commonschemas/schemas.json#/AccountId",
+            "description": "Account number whose status is requested"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_InquireAccountSignatureStatusResponse": {
-        "title": "tns_InquireAccountSignatureStatusResponse",
-        "required": [
-          "success"
-        ],
+      "InquireAccountSignatureStatusResponseType": {
+        "title": "InquireAccountSignatureStatusResponseType",
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_InquireStatusResponseType"
-              }
-            ]
+            "$ref": "#/components/schemas/InquireStatusResponseType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_InquireStatusResponseType": {
-        "title": "tns_InquireStatusResponseType",
+      "InquireStatusResponseType": {
+        "title": "InquireStatusResponseType",
         "type": "object",
         "properties": {
           "type": {
@@ -21503,7 +21681,7 @@
           },
           "statusCode": {
             "type": "string",
-            "description": "Status code for the account that is returned in\r\n\t\t\t\t\t\tthe response"
+            "description": "Status code for the account that is returned in the response"
           },
           "description": {
             "type": "string",
@@ -21513,8 +21691,7 @@
             "type": "string",
             "description": "This will always be “Account”."
           }
-        },
-        "description": ""
+        }
       },
       "tns_StandingOrderType": {
         "title": "tns_StandingOrderType",
@@ -26748,7 +26925,7 @@
         "type": "object",
         "properties": {
           "AccountNumberValidationRequest": {
-            "$ref": "#/components/schemas/tns_AccountNumberValidationRequest"
+            "$ref": "#/components/schemas/AccountNumberValidationRequestType"
           }
         }
       },
@@ -26760,11 +26937,19 @@
         "type": "object",
         "properties": {
           "AccountNumberValidationResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_AccountNumberValidationResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/AccountNumberValidationResponseType"
+          }
+        }
+      },
+      "tns_AccountNumberValidationRequest": {
+        "title": "tns_AccountNumberValidationRequest",
+        "required": [
+          "accountId"
+        ],
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "$ref": "../../commonschemas/schemas.json#/AccountId"
           }
         }
       },
@@ -28018,7 +28203,7 @@
         "type": "object",
         "properties": {
           "IBANCreationRequest": {
-            "$ref": "#/components/schemas/tns_IBANCreationRequest"
+            "$ref": "#/components/schemas/IBANCreationRequestType"
           }
         }
       },
@@ -28030,11 +28215,7 @@
         "type": "object",
         "properties": {
           "IBANCreationResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_IBANCreationResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/IBANCreationResponseType"
           }
         }
       },
@@ -28074,7 +28255,7 @@
         "type": "object",
         "properties": {
           "InquireAccountSignatureStatusRequest": {
-            "$ref": "#/components/schemas/tns_InquireAccountSignatureStatusRequest"
+            "$ref": "#/components/schemas/InquireAccountSignatureStatusRequestType"
           }
         }
       },
@@ -28086,11 +28267,7 @@
         "type": "object",
         "properties": {
           "InquireAccountSignatureStatusResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_InquireAccountSignatureStatusResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/InquireAccountSignatureStatusResponseType"
           }
         }
       },
@@ -28550,7 +28727,7 @@
         "type": "object",
         "properties": {
           "PromoCodesRequest": {
-            "$ref": "#/components/schemas/tns_PromoCodesRequest"
+            "$ref": "#/components/schemas/PromoCodesRequestType"
           }
         }
       },
@@ -28562,11 +28739,7 @@
         "type": "object",
         "properties": {
           "PromoCodesResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_PromoCodesResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/PromoCodesResponseType"
           }
         }
       },
@@ -28988,14 +29161,13 @@
         "type": "string",
         "description": ""
       },
-      "tns_isAccountValid": {
-        "title": "tns_isAccountValid",
+      "isAccountValid": {
+        "title": "isAccountValid",
         "enum": [
           "Yes",
           "No"
         ],
-        "type": "string",
-        "description": ""
+        "type": "string"
       },
       "tns_isCustomerAccountValid": {
         "title": "tns_isCustomerAccountValid",
