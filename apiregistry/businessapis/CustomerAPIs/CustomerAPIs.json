@@ -1796,32 +1796,32 @@
         "deprecated": false
       }
     },
-    "/CreateComplaint": {
+    "/v1/CreateComplaint": {
       "post": {
         "tags": [
-          "CustomerService"
+          "CUSTOMER"
         ],
-        "summary": "CreateComplaint",
+        "description": "This operation is used to create Complaint through Siebel",
         "operationId": "CreateComplaint",
         "parameters": [
           {
-            "name": "ServiceHeader",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "type": "string"
             }
           },
           {
-            "name": "Security",
+            "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1830,11 +1830,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/ComplaintRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/ComplaintRequest"
               }
             }
           },
@@ -1847,11 +1843,77 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/ComplaintResponse"
-                    }
-                  ]
+                  "$ref": "#/components/schemas/ComplaintResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -3976,32 +4038,32 @@
         "deprecated": false
       }
     },
-    "/ScreenCustomer": {
+    "/v1/ScreenCustomer": {
       "post": {
         "tags": [
-          "CustomerService"
+          "CUSTOMER"
         ],
-        "summary": "ScreenCustomer",
+        "description": "ScreenCustomer",
         "operationId": "ScreenCustomer",
         "parameters": [
           {
-            "name": "ServiceHeader",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "type": "string"
             }
           },
           {
-            "name": "Security",
+            "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -4010,11 +4072,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/ScreenCustomerRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/ScreenCustomerRequest"
               }
             }
           },
@@ -4027,11 +4085,77 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/ScreenCustomerResponse"
-                    }
-                  ]
+                  "$ref": "#/components/schemas/ScreenCustomerResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -27147,7 +27271,7 @@
           "attachment": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_attachmentType"
+                "$ref": "#/components/schemas/attachmentType"
               }
             ]
           },
@@ -27250,8 +27374,8 @@
         },
         "description": ""
       },
-      "tns_ComplaintRequest": {
-        "title": "tns_ComplaintRequest",
+      "ComplaintRequestType": {
+        "title": "ComplaintRequestType",
         "required": [
           "subArea",
           "cif",
@@ -27359,7 +27483,7 @@
             "type": "string"
           },
           "CreditCard": {
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText"
           },
           "Source": {
             "type": "string"
@@ -27372,15 +27496,13 @@
             "type": "string"
           },
           "cif": {
-            "pattern": "([0-9]){14}|([0]){1}",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/CIF"
           },
           "SRService": {
             "type": "string"
           },
           "SRMobilePhoneNumber": {
-            "pattern": "[0-9]{9,15}|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/MobileNumberOptional"
           },
           "merchantName": {
             "maxLength": 100,
@@ -27397,23 +27519,20 @@
           "attachment": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_attachmentType"
-            },
-            "description": ""
+              "$ref": "#/components/schemas/attachmentType"
+            }
           },
           "processAmount": {
-            "type": "number"
+            "$ref": "../../commonschemas/schemas.json#/Amount"
           },
           "receivedCallDate": {
-            "pattern": "(((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01])))|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/DateOptional"
           },
           "mobileNumber": {
-            "pattern": "[0-9]{9,15}|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/MobileNumberOptional"
           },
           "amount": {
-            "type": "number"
+            "$ref": "../../commonschemas/schemas.json#/Amount"
           },
           "bankCreatorCard": {
             "type": "string"
@@ -27422,8 +27541,7 @@
             "type": "string"
           },
           "dateOfProcess": {
-            "pattern": "(((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01])))|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/DateOptional"
           },
           "accountType": {
             "type": "string"
@@ -27432,17 +27550,13 @@
             "type": "string"
           },
           "dateOfDiscount": {
-            "pattern": "(((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01])))|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/DateOptional"
           },
           "discountCode": {
             "type": "string"
           },
           "accountId": {
-            "maxLength": 24,
-            "minLength": 14,
-            "pattern": "([0-9]{14})|(SA[0-9]{4}[a-zA-Z0-9]{18})",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/AccountId"
           },
           "contactPersonName": {
             "type": "string"
@@ -27454,8 +27568,7 @@
             "type": "string"
           },
           "companyNotificationDate": {
-            "pattern": "(((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01])))|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/DateOptional"
           },
           "vendorEmail": {
             "type": "string"
@@ -27470,34 +27583,29 @@
             "type": "string"
           },
           "atmCardNumber": {
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText"
           },
           "listOfNotes": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_ListOfNotesType"
-              }
-            ]
+            "$ref": "#/components/schemas/ListOfNotesType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_ListOfNotesType": {
-        "title": "tns_ListOfNotesType",
+      "ListOfNotesType": {
+        "title": "ListOfNotesType",
         "type": "object",
         "properties": {
           "notes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_NotesType"
+              "$ref": "#/components/schemas/NotesType"
             },
             "description": "Notes"
           }
         },
         "description": ""
       },
-      "tns_NotesType": {
-        "title": "tns_NotesType",
+      "NotesType": {
+        "title": "NotesType",
         "type": "object",
         "properties": {
           "note": {
@@ -27511,29 +27619,21 @@
         },
         "description": ""
       },
-      "tns_ComplaintResponse": {
-        "title": "tns_ComplaintResponse",
+      "ComplaintResponseType": {
+        "title": "ComplaintResponseType",
         "type": "object",
         "properties": {
           "complaint": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_ComplaintType"
-              }
-            ]
+            "$ref": "#/components/schemas/ComplaintType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
       },
-      "tns_attachmentType": {
-        "title": "tns_attachmentType",
+      "attachmentType": {
+        "title": "attachmentType",
         "required": [
           "attachmentFileExtension",
           "attachmentFileName",
@@ -27559,8 +27659,8 @@
         },
         "description": ""
       },
-      "tns_ComplaintType": {
-        "title": "tns_ComplaintType",
+      "ComplaintType": {
+        "title": "ComplaintType",
         "required": [
           "SRNumber"
         ],
@@ -27593,7 +27693,7 @@
           "attachment": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_attachmentType"
+                "$ref": "#/components/schemas/attachmentType"
               }
             ]
           }
@@ -28000,7 +28100,7 @@
           "attachment": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_attachmentType"
+                "$ref": "#/components/schemas/attachmentType"
               }
             ]
           }
@@ -35066,8 +35166,8 @@
         },
         "description": ""
       },
-      "tns_ScreenCustomerRequest": {
-        "title": "tns_ScreenCustomerRequest",
+      "ScreenCustomerRequestType": {
+        "title": "ScreenCustomerRequestType",
         "required": [
           "messageID",
           "messageType",
@@ -35087,18 +35187,17 @@
           "transactionDetail": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_transactionDetailType"
+              "$ref": "#/components/schemas/transactionDetailType"
             },
             "description": "Transaction Detail of Customer"
           },
           "messageData": {
             "type": "string"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_transactionDetailType": {
-        "title": "tns_transactionDetailType",
+      "transactionDetailType": {
+        "title": "transactionDetailType",
         "required": [
           "transactionDate",
           "transactionCode",
@@ -35107,13 +35206,11 @@
         "type": "object",
         "properties": {
           "transactionDate": {
-            "pattern": "((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01]))",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/Date",
             "description": "Transaction Date"
           },
           "transactionTime": {
-            "pattern": "([0-9]){4}|([0-9]){6}",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/MWTime",
             "description": "Transaction Time"
           },
           "transactionBranch": {
@@ -35150,8 +35247,7 @@
             "type": "string"
           },
           "requestorDOB": {
-            "pattern": "(((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01])))|()",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/DateOptional",
             "description": "Requestor Date of Birth"
           },
           "requestorPOB": {
@@ -35195,8 +35291,7 @@
             "type": "string"
           },
           "receiverDOB": {
-            "pattern": "(((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01])))|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/DateOptional"
           },
           "receiverPOB": {
             "maxLength": 50,
@@ -35226,49 +35321,35 @@
             "maxLength": 50,
             "type": "string"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_ScreenCustomerResponse": {
-        "title": "tns_ScreenCustomerResponse",
+      "ScreenCustomerResponseType": {
+        "title": "ScreenCustomerResponse",
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_screenCustomerResponseSuccessType"
-              }
-            ]
+            "$ref": "#/components/schemas/screenCustomerResponseSuccessType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
       },
-      "tns_screenCustomerResponseSuccessType": {
-        "title": "tns_screenCustomerResponseSuccessType",
+      "screenCustomerResponseSuccessType": {
+        "title": "screenCustomerResponseSuccessType",
         "required": [
           "results"
         ],
         "type": "object",
         "properties": {
           "results": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_resultsType"
-              }
-            ]
+            "$ref": "#/components/schemas/resultsType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_resultsType": {
-        "title": "tns_resultsType",
+      "resultsType": {
+        "title": "resultsType",
         "required": [
           "result"
         ],
@@ -35277,15 +35358,13 @@
           "result": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_resultType"
-            },
-            "description": ""
+              "$ref": "#/components/schemas/resultType"
+            }
           }
-        },
-        "description": ""
+        }
       },
-      "tns_resultType": {
-        "title": "tns_resultType",
+      "resultType": {
+        "title": "resultType",
         "type": "object",
         "properties": {
           "functionName": {
@@ -35299,15 +35378,14 @@
           "property": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_keyValuePair"
+              "$ref": "#/components/schemas/keyValuePair"
             },
             "description": "Key Value Properties"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_keyValuePair": {
-        "title": "tns_keyValuePair",
+      "keyValuePair": {
+        "title": "keyValuePair",
         "type": "object",
         "properties": {
           "key": {
@@ -35318,8 +35396,7 @@
             "type": "string",
             "description": "value"
           }
-        },
-        "description": ""
+        }
       },
       "tns_CustomerInquiryRequest": {
         "title": "tns_CustomerInquiryRequest",
@@ -37370,7 +37447,7 @@
           "attachment": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_attachmentType"
+              "$ref": "#/components/schemas/attachmentType"
             },
             "description": ""
           }
@@ -53676,7 +53753,7 @@
         "type": "object",
         "properties": {
           "ComplaintRequest": {
-            "$ref": "#/components/schemas/tns_ComplaintRequest"
+            "$ref": "#/components/schemas/ComplaintRequestType"
           }
         }
       },
@@ -53688,11 +53765,7 @@
         "type": "object",
         "properties": {
           "ComplaintResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_ComplaintResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/ComplaintResponseType"
           }
         }
       },
@@ -56475,7 +56548,7 @@
         "type": "object",
         "properties": {
           "ScreenCustomerRequest": {
-            "$ref": "#/components/schemas/tns_ScreenCustomerRequest"
+            "$ref": "#/components/schemas/ScreenCustomerRequestType"
           }
         }
       },
@@ -56487,11 +56560,7 @@
         "type": "object",
         "properties": {
           "ScreenCustomerResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_ScreenCustomerResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/ScreenCustomerResponseType"
           }
         }
       },

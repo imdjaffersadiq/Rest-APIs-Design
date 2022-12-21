@@ -647,32 +647,32 @@
         "deprecated": false
       }
     },
-    "/GetSupplementaryCards": {
+    "/v1/GetSupplementaryCards": {
       "post": {
         "tags": [
-          "CreditCardService"
+          "CreditCard"
         ],
-        "summary": "GetSupplementaryCards",
+        "description": "This operation retirieves Supplementary Card Details",
         "operationId": "GetSupplementaryCards",
         "parameters": [
           {
-            "name": "Security",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "type": "string"
             }
           },
           {
             "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -681,11 +681,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/CreditCardSupplementaryRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/CreditCardSupplementaryRequest"
               }
             }
           },
@@ -698,11 +694,77 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/CreditCardSupplementaryResponse"
-                    }
-                  ]
+                  "$ref": "#/components/schemas/CreditCardSupplementaryResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -711,32 +773,32 @@
         "deprecated": false
       }
     },
-    "/GetTransactions": {
+    "/v1/GetTransactions": {
       "post": {
         "tags": [
-          "CreditCardService"
+          "CreditCard"
         ],
-        "summary": "GetTransactions",
+        "description": "This operation retrieves the Credit Card Transactions Details",
         "operationId": "GetTransactions",
         "parameters": [
           {
-            "name": "Security",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "type": "string"
             }
           },
           {
             "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -745,11 +807,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/CreditCardTransactionsRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/CreditCardTransactionsRequest"
               }
             }
           },
@@ -762,11 +820,77 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/CreditCardTransactionsResponse"
-                    }
-                  ]
+                  "$ref": "#/components/schemas/CreditCardTransactionsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -4103,32 +4227,32 @@
         "deprecated": false
       }
     },
-    "/InquireCreditCardHimayateeProgram": {
+    "/v1/InquireCreditCardHimayateeProgram": {
       "post": {
         "tags": [
-          "CreditCardService"
+          "CreditCard"
         ],
-        "summary": "InquireCreditCardHimayateeProgram",
+        "description": "This operation retrieves Credit Card Himayatee Program details",
         "operationId": "InquireCreditCardHimayateeProgram",
         "parameters": [
           {
-            "name": "Security",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "type": "string"
             }
           },
           {
             "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "$ref": "../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -4137,11 +4261,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/InquireCreditCardHimayateeProgramRequest"
-                  }
-                ]
+                "$ref": "#/components/schemas/InquireCreditCardHimayateeProgramRequest"
               }
             }
           },
@@ -4154,11 +4274,77 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/InquireCreditCardHimayateeProgramResponse"
-                    }
-                  ]
+                  "$ref": "#/components/schemas/InquireCreditCardHimayateeProgramResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -9578,7 +9764,7 @@
           "searchLevel": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_SearchLevelType"
+                "$ref": "#/components/schemas/SearchLevelType"
               },
               {
                 "description": "Search level identifying which transactions\r\n\t\t\t\t\t\t\tshould be returned. If not specified, defaulted to 0."
@@ -9598,8 +9784,8 @@
         },
         "description": ""
       },
-      "tns_SearchLevelType": {
-        "title": "tns_SearchLevelType",
+      "SearchLevelType": {
+        "title": "SearchLevelType",
         "enum": [
           0,
           1,
@@ -9622,7 +9808,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               }
             ]
           },
@@ -9814,64 +10000,51 @@
         },
         "description": ""
       },
-      "tns_CreditCardSupplementaryRequest": {
-        "title": "tns_CreditCardSupplementaryRequest",
+      "CreditCardSupplementaryRequestType": {
+        "title": "CreditCardSupplementaryRequestType",
         "required": [
           "accountId"
         ],
         "type": "object",
         "properties": {
           "accountId": {
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText",
             "description": "CreditCard ID"
           },
           "status": {
             "type": "string",
-            "description": "List of card statuses required in the response.\r\n\t\t\t\t\t\t\tIf multiple values are required, these should be separated by -\r\n\r\n\t\t\t\t\t\t\tThe current supported cortex card statuses are the below\r\n\r\n\t\t\t\t\t\t\tValue\r\n\t\t\t\t\t\t\tDescription\r\n\t\t\t\t\t\t\t00 NORMAL\r\n\t\t\t\t\t\t\t01 PIN TRIES EXCEEDED\r\n\t\t\t\t\t\t\t02 NOT YET ISSUED\r\n\t\t\t\t\t\t\t03 CARD\r\n\t\t\t\t\t\t\tEXPIRED\r\n\t\t\t\t\t\t\t04 LOST (equivalent to block code L)\r\n\t\t\t\t\t\t\t05 STOLEN (equivalent\r\n\t\t\t\t\t\t\tto block code S)\r\n\t\t\t\t\t\t\t06 CUSTOMER CLOSE (equivalent to block code C)\r\n\t\t\t\t\t\t\t07\r\n\t\t\t\t\t\t\tBANK CANCELED\r\n\t\t\t\t\t\t\t08 FRAUD (equivalent to block code O)\r\n\t\t\t\t\t\t\t09 DAMAGED\r\n\t\t\t\t\t\t\t(equivalent to block code G)\r\n\t\t\t\t\t\t\t20 PENDING ISSUANCE (printing)\r\n\t\t\t\t\t\t\t21 CARD\r\n\t\t\t\t\t\t\tEXTRACTED (embossing file generated for bulk issuance)\r\n\t\t\t\t\t\t\t22\r\n\t\t\t\t\t\t\tEXTRACTION FAILED (embossing file generation failed for bulk\r\n\t\t\t\t\t\t\tissuance)\r\n\t\t\t\t\t\t\t23 FAILED AT BUREAU (bulk issuance printing failed)\r\n\t\t\t\t\t\t\t24\r\n\t\t\t\t\t\t\tPRINTING FAILED\r\n\t\t\t\t\t\t\t30 PENDING ACTIVATION\r\n\t\t\t\t\t\t\t40 AGGREEMENT (equivalent to\r\n\t\t\t\t\t\t\tblock code E)\r\n\t\t\t\t\t\t\t42 CLOSED BY NCB (equivalent to block code K)\r\n\t\t\t\t\t\t\t44\r\n\t\t\t\t\t\t\tFRAUD CUSTOMER REQUESTED (equivalent to block code P)\r\n\t\t\t\t\t\t\t45 CUSTOMER\r\n\t\t\t\t\t\t\tDEAD (equivalent to block code D)\r\n\t\t\t\t\t\t\t46 CHANGE PRODUCT (equivalent to\r\n\t\t\t\t\t\t\tblock code X)\r\n\t\t\t\t\t\t\t48 NOT RENEWED (equivalent to block code N)\r\n\t\t\t\t\t\t\t49 SAMA\r\n\t\t\t\t\t\t\tBLOCKED (equivalent to block code J)\r\n\t\t\t\t\t\t\t50 RISK STOPPED (equivalent\r\n\t\t\t\t\t\t\tto block code Q)\r\n\t\t\t\t\t\t\t51 FRAUD APPLICANT (equivalent to block code F)\r\n\t\t\t\t\t\t\t52 INACTIVE (equivalent to block code I)\r\n\t\t\t\t\t\t\t53 COURT JUDGEMENT\r\n\t\t\t\t\t\t\t54\r\n\t\t\t\t\t\t\tExpired ID (equivalent to block code M)\r\n\t\t\t\t\t\t\t55 RETURNED CARD\r\n\t\t\t\t\t\t\t(equivalent to block code R)\r\n\t\t\t\t\t\t\t56 CUSTOMER CANCELED (equivalent to\r\n\t\t\t\t\t\t\tblock code T)\r\n\t\t\t\t\t\t\t57 TEMP BLOCK (equivalent to block code U)\r\n\t\t\t\t\t\t\t86 PILOT\r\n\t\t\t\t\t\t\tBLOCK\r\n\t\t\t\t\t\t\t98 PURGE (equivalent to block code P)\r\n\t\t\t\t\t\t\t99 COLLECTION"
+            "description": "List of card statuses required in the response.If multiple values are required, these should be separated by -\r\n\r\n\t\t\t\t\t\t\tThe current supported cortex card statuses are the below\r\n\r\n\t\t\t\t\t\t\tValue\r\n\t\t\t\t\t\t\tDescription\r\n\t\t\t\t\t\t\t00 NORMAL\r\n\t\t\t\t\t\t\t01 PIN TRIES EXCEEDED\r\n\t\t\t\t\t\t\t02 NOT YET ISSUED\r\n\t\t\t\t\t\t\t03 CARD\r\n\t\t\t\t\t\t\tEXPIRED\r\n\t\t\t\t\t\t\t04 LOST (equivalent to block code L)\r\n\t\t\t\t\t\t\t05 STOLEN (equivalent\r\n\t\t\t\t\t\t\tto block code S)\r\n\t\t\t\t\t\t\t06 CUSTOMER CLOSE (equivalent to block code C)\r\n\t\t\t\t\t\t\t07\r\n\t\t\t\t\t\t\tBANK CANCELED\r\n\t\t\t\t\t\t\t08 FRAUD (equivalent to block code O)\r\n\t\t\t\t\t\t\t09 DAMAGED\r\n\t\t\t\t\t\t\t(equivalent to block code G)\r\n\t\t\t\t\t\t\t20 PENDING ISSUANCE (printing)\r\n\t\t\t\t\t\t\t21 CARD\r\n\t\t\t\t\t\t\tEXTRACTED (embossing file generated for bulk issuance)\r\n\t\t\t\t\t\t\t22\r\n\t\t\t\t\t\t\tEXTRACTION FAILED (embossing file generation failed for bulk\r\n\t\t\t\t\t\t\tissuance)\r\n\t\t\t\t\t\t\t23 FAILED AT BUREAU (bulk issuance printing failed)\r\n\t\t\t\t\t\t\t24\r\n\t\t\t\t\t\t\tPRINTING FAILED\r\n\t\t\t\t\t\t\t30 PENDING ACTIVATION\r\n\t\t\t\t\t\t\t40 AGGREEMENT (equivalent to\r\n\t\t\t\t\t\t\tblock code E)\r\n\t\t\t\t\t\t\t42 CLOSED BY NCB (equivalent to block code K)\r\n\t\t\t\t\t\t\t44\r\n\t\t\t\t\t\t\tFRAUD CUSTOMER REQUESTED (equivalent to block code P)\r\n\t\t\t\t\t\t\t45 CUSTOMER\r\n\t\t\t\t\t\t\tDEAD (equivalent to block code D)\r\n\t\t\t\t\t\t\t46 CHANGE PRODUCT (equivalent to\r\n\t\t\t\t\t\t\tblock code X)\r\n\t\t\t\t\t\t\t48 NOT RENEWED (equivalent to block code N)\r\n\t\t\t\t\t\t\t49 SAMA\r\n\t\t\t\t\t\t\tBLOCKED (equivalent to block code J)\r\n\t\t\t\t\t\t\t50 RISK STOPPED (equivalent\r\n\t\t\t\t\t\t\tto block code Q)\r\n\t\t\t\t\t\t\t51 FRAUD APPLICANT (equivalent to block code F)\r\n\t\t\t\t\t\t\t52 INACTIVE (equivalent to block code I)\r\n\t\t\t\t\t\t\t53 COURT JUDGEMENT\r\n\t\t\t\t\t\t\t54\r\n\t\t\t\t\t\t\tExpired ID (equivalent to block code M)\r\n\t\t\t\t\t\t\t55 RETURNED CARD\r\n\t\t\t\t\t\t\t(equivalent to block code R)\r\n\t\t\t\t\t\t\t56 CUSTOMER CANCELED (equivalent to\r\n\t\t\t\t\t\t\tblock code T)\r\n\t\t\t\t\t\t\t57 TEMP BLOCK (equivalent to block code U)\r\n\t\t\t\t\t\t\t86 PILOT\r\n\t\t\t\t\t\t\tBLOCK\r\n\t\t\t\t\t\t\t98 PURGE (equivalent to block code P)\r\n\t\t\t\t\t\t\t99 COLLECTION"
           },
           "option": {
-            "allOf": [
+            "oneOf": [
               {
-                "oneOf": [
-                  {
-                    "nullable": true
-                  },
-                  {
-                    "$ref": "#/components/schemas/tns_option"
-                  }
-                ]
+                "nullable": true
               },
               {
-                "description": "OPTION can have below values\r\n\t\t\t\t\t\t\t\"0\" - IT will get\r\n\t\t\t\t\t\t\tSupplementary Card linked with Primary Card\r\n\t\t\t\t\t\t\t\"1\" - IT will get all\r\n\t\t\t\t\t\t\tSupplementary Cards and Primary Cards based on\r\n\t\t\t\t\t\t\tAccount ID"
+                "$ref": "#/components/schemas/option"
               }
-            ]
+            ],
+            "description": "OPTION can have below values\r\n\t\t\t\t\t\t\t\"0\" - IT will get\r\n\t\t\t\t\t\t\tSupplementary Card linked with Primary Card\r\n\t\t\t\t\t\t\t\"1\" - IT will get all\r\n\t\t\t\t\t\t\tSupplementary Cards and Primary Cards based on\r\n\t\t\t\t\t\t\tAccount ID"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_CreditCardSupplementaryResponse": {
-        "title": "tns_CreditCardSupplementaryResponse",
+      "CreditCardSupplementaryResponseType": {
+        "title": "CreditCardSupplementaryResponseType",
         "type": "object",
         "properties": {
           "record": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_CreditCardSupplementaryType"
-            },
-            "description": ""
+              "$ref": "#/components/schemas/CreditCardSupplementaryType"
+            }
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_CreditCardSupplementaryType": {
-        "title": "tns_CreditCardSupplementaryType",
+      "CreditCardSupplementaryType": {
+        "title": "CreditCardSupplementaryType",
         "type": "object",
         "properties": {
           "number": {
@@ -9880,11 +10053,11 @@
             "default": 0
           },
           "cardNumber": {
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText",
             "description": "Card No"
           },
           "creditLimit": {
-            "type": "number",
+            "$ref": "../../commonschemas/schemas.json#/Amount",
             "description": "Credit Limit of the card",
             "default": 0.0
           },
@@ -9902,18 +10075,15 @@
             "description": "Status Description"
           },
           "fromDate": {
-            "pattern": "([0-9]){6}|()",
-            "type": "string",
+            "$ref": "#/components/schemas/CreditCardDateOptional",
             "description": "From (date yyyymm)"
           },
           "toDate": {
-            "pattern": "([0-9]){6}|()",
-            "type": "string",
+            "$ref": "#/components/schemas/CreditCardDateOptional",
             "description": "To (date yyyymm)"
           },
           "oppositionDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional",
             "description": "To (date yyyymm)"
           },
           "oppositionCode": {
@@ -9943,34 +10113,31 @@
             "description": "Active Description"
           },
           "issuedDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional",
             "description": "Issued (date yyyymmdd)"
           },
           "changedDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
-            "description": "Changed"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional",
+            "description": "Change (date yyyymmdd)"
           },
           "productType": {
             "type": "string",
             "description": "Product Type (of the card)"
           },
           "dueAmount": {
-            "type": "number",
+            "$ref": "../../commonschemas/schemas.json#/Amount",
             "description": "due amount of the card"
           },
           "cardBalance": {
-            "type": "number",
+            "$ref": "../../commonschemas/schemas.json#/Amount",
             "description": "Credit card balance"
           },
           "printStatus": {
             "type": "string",
-            "description": "print status- Printed Not Printed Failure\r\n\t\t\t\t\t\tPrinted Not Applicable Approved Force Blocked"
+            "description": "print status- Printed Not Printed FailPrinted Not Applicalureble Approved Force Blocked"
           },
           "lastCardExpiration": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional"
           },
           "cardAWBNumber": {
             "type": "string"
@@ -9979,7 +10146,7 @@
             "type": "string"
           },
           "cardTotalUsage": {
-            "type": "number"
+            "$ref": "../../commonschemas/schemas.json#/Amount"
           },
           "cardStatus": {
             "type": "string"
@@ -9987,86 +10154,61 @@
           "fursanMembershipNumber": {
             "type": "string"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_CreditCardTransactionsRequest": {
-        "title": "tns_CreditCardTransactionsRequest",
+      "CreditCardTransactionsRequestType": {
+        "title": "CreditCardTransactionsRequestType",
         "required": [
           "accountId"
         ],
         "type": "object",
         "properties": {
           "accountId": {
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText",
             "description": "CreditCard ID"
           },
           "transaction": {
             "type": "integer",
-            "description": "Transaction",
             "format": "int32",
+            "description": "Transaction",
             "default": 0
           },
           "pageNumber": {
-            "minimum": 0.0,
-            "type": "integer",
+            "$ref": "../../commonschemas/schemas.json#/PageNumber",
             "description": "Page Number",
-            "format": "int32",
             "default": 0
           },
           "searchLevel": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_SearchLevelType"
-              },
-              {
-                "description": "Search level identifying which transactions\r\n\t\t\t\t\t\t\tshould be returned. If not specified,\r\n\t\t\t\t\t\t\tdefaulted to 0."
-              }
-            ]
+            "$ref": "#/components/schemas/SearchLevelType",
+            "description": "Search level identifying which transactions should be returned. If not specified, defaulted to 0."
           },
           "searchFilter": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_searchFilterCreditCardTransactionsType"
-              },
-              {
-                "description": "Search filter to apply if any. If not\r\n\t\t\t\t\t\t\tspecified, no filter will be applied and all\r\n\t\t\t\t\t\t\tcard/account\r\n\t\t\t\t\t\t\ttransactions will be returned"
-              }
-            ]
+            "$ref": "#/components/schemas/searchFilterCreditCardTransactionsType",
+            "description": "Search filter to apply if any. If not specified, no filter will be applied and all card/account transactions will be returned"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_CreditCardTransactionsResponse": {
-        "title": "tns_CreditCardTransactionsResponse",
+      "CreditCardTransactionsResponseType": {
+        "title": "CreditCardTransactionsResponseType",
         "type": "object",
         "properties": {
           "record": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_CreditCardTransactionType"
-            },
-            "description": ""
+              "$ref": "#/components/schemas/CreditCardTransactionType"
+            }
           },
           "pageDetails": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
-              }
-            ]
+            "$ref": "#/components/schemas/pageDetailsType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "#/components/schemas/fault_FaultType"
           }
         },
         "description": ""
       },
-      "tns_CreditCardTransactionType": {
-        "title": "tns_CreditCardTransactionType",
+      "CreditCardTransactionType": {
+        "title": "CreditCardTransactionType",
         "type": "object",
         "properties": {
           "recordNumber": {
@@ -10086,29 +10228,19 @@
             "description": "Description of the transaction"
           },
           "date": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
-            "description": "Date is the transaction date yyyymmdd"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional"
           },
           "amount": {
-            "type": "number",
-            "description": "Amt is the amount of the transaction",
-            "default": 0.0
+            "$ref": "../../commonschemas/schemas.json#/Amount"
           },
           "currencyCode": {
-            "pattern": "([A-Z]{3,3})|()",
-            "type": "string",
-            "description": "Currency is the currency of the transaction"
+            "$ref": "../../commonschemas/schemas.json#/ISOCurrencyCodeOptional"
           },
           "amountSR": {
-            "type": "number",
-            "description": "Amount SR is the amount, converted to Saudi\r\n\t\t\t\t\t\tRiyals",
-            "default": 0.0
+            "$ref": "../../commonschemas/schemas.json#/Amount"
           },
           "merchant": {
-            "maxLength": 25,
-            "type": "string",
-            "description": "Merchant"
+            "$ref": "../../commonschemas/schemas.json#/Merchant"
           },
           "location": {
             "type": "string"
@@ -10117,41 +10249,28 @@
             "type": "string"
           },
           "postingDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
-            "description": "P date is the posting date of the trans"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional"
           },
           "cardNumber": {
-            "type": "string",
-            "description": "Card No Used"
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText"
           },
           "transTime": {
             "type": "string"
           },
           "statementMissingPostingDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional"
           },
           "markup": {
-            "type": "number"
+            "$ref": "../../commonschemas/schemas.json#/Amount"
           },
           "exchangeRate": {
-            "type": "number"
+            "$ref": "../../commonschemas/schemas.json#/ExchangeRate"
           },
           "billingAmount": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_AmountOptional"
-              },
-              {
-                "description": "Billing Amount"
-              }
-            ]
+            "$ref": "../../commonschemas/schemas.json#/AmountOptional"
           },
           "billingCurrencyCode": {
-            "pattern": "([A-Z]{3,3})|()",
-            "type": "string",
-            "description": "Billing Currency"
+            "$ref": "../../commonschemas/schemas.json#/ISOCurrencyCodeOptional"
           },
           "cardTypeHolderName": {
             "type": "string",
@@ -10341,7 +10460,7 @@
           "option": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_option"
+                "$ref": "#/components/schemas/option"
               },
               {
                 "description": "One of the following values: Ã¢â‚¬Å“1Ã¢â‚¬Â\r\n\t\t\t\t\t\t\tApplication\r\n\t\t\t\t\t\t\tÃ¢â‚¬Å“2Ã¢â‚¬Â Customer name Ã¢â‚¬Å“3Ã¢â‚¬Â\r\n\t\t\t\t\t\t\tIdentification number\r\n\t\t\t\t\t\t\tÃ¢â‚¬Å“4Ã¢â‚¬Â Account number\r\n\t\t\t\t\t\t\tÃ¢â‚¬Å“5Ã¢â‚¬Â\r\n\t\t\t\t\t\t\tShort CIF"
@@ -13197,6 +13316,11 @@
         ],
         "type": "string",
         "description": "Possible values are â€œMâ€ or â€œFâ€ (M = Minimum, F = Full)"
+      },
+      "CreditCardDateOptional": {
+        "title": "CreditCardDateOptional",
+        "type": "string",
+        "pattern": "([0-9]){6}|()"
       },
       "tns_ChangeCreditCardPaymentMethodRequest": {
         "title": "tns_ChangeCreditCardPaymentMethodRequest",
@@ -17343,8 +17467,8 @@
         },
         "description": ""
       },
-      "tns_ccsAccountIdentifierType": {
-        "title": "tns_ccsAccountIdentifierType",
+      "ccsAccountIdentifierType": {
+        "title": "ccsAccountIdentifierType",
         "type": "object",
         "properties": {
           "accountNumber": {
@@ -17356,12 +17480,10 @@
             "description": "Institution Code the account belongs to"
           },
           "currencyCode": {
-            "pattern": "([A-Z]{3,3})|()",
-            "type": "string",
-            "description": "currency code for this account"
+            "$ref": "../../commonschemas/schemas.json#/ISOCurrencyCodeOptional",
+            "description": "currency code for this account "
           }
-        },
-        "description": ""
+        }
       },
       "tns_ccsAccountIdentifierType1": {
         "title": "tns_ccsAccountIdentifierType1",
@@ -17415,7 +17537,7 @@
           "ccsAccountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               },
               {
                 "description": "Whenever a service does an update/action on an\r\n\t\t\t\t\t\taccount and requires the account to be\r\n\t\t\t\t\t\tspecified, the account\r\n\t\t\t\t\t\tidentifier is used."
@@ -17425,7 +17547,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -17449,13 +17571,13 @@
         },
         "description": ""
       },
-      "tns_pageDetailsType": {
-        "title": "tns_pageDetailsType",
+      "pageDetailsType": {
+        "title": "pageDetailsType",
         "type": "object",
         "properties": {
           "pageSize": {
             "type": "integer",
-            "description": "Number of results supported in a single page.\r\n\t\t\t\t\t\tEchoed back from the request",
+            "description": "Number of results supported in a single page.Echoed back from the request",
             "format": "int32",
             "default": 0
           },
@@ -17467,13 +17589,13 @@
           },
           "currentNumberOfResults": {
             "type": "integer",
-            "description": "Current of number of results returned in the\r\n\t\t\t\t\t\tresponse",
+            "description": "Current of number of results returned in the response",
             "format": "int32",
             "default": 0
           },
           "totalNumberOfPages": {
             "type": "integer",
-            "description": "Total number of pages for the all results\r\n\t\t\t\t\t\tsatisfying the critieria of the request",
+            "description": "Total number of pages for the all results satisfying the critieria of the request",
             "format": "int32",
             "default": 0
           },
@@ -17507,7 +17629,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               }
             ]
           },
@@ -18076,29 +18198,27 @@
         },
         "description": ""
       },
-      "tns_cardIdentifierType": {
-        "title": "tns_cardIdentifierType",
+      "cardIdentifierType": {
+        "title": "cardIdentifierType",
         "type": "object",
         "properties": {
           "pan": {
-            "type": "string",
-            "description": "pan number"
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText",
+            "description": "PAN Number"
           },
           "vpan": {
-            "type": "string",
-            "description": "vpan number"
+            "$ref": "../../commonschemas/schemas.json#/EncryptedText",
+            "description": "VPAN Number"
           },
           "sequenceNumber": {
             "type": "string",
             "description": "sequenceNumber"
           },
           "expiryDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
-            "description": "expiryDate expiry date of the card"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional",
+            "description": "expiryDate expiry date of the card "
           }
-        },
-        "description": ""
+        }
       },
       "tns_responseCardIdentifierType": {
         "title": "tns_responseCardIdentifierType",
@@ -18165,14 +18285,14 @@
           "ccsAccountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               }
             ]
           },
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -18327,7 +18447,7 @@
           "ccsAccountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               },
               {
                 "description": "Actual credit account details for which the\r\n\t\t\t\t\t\tallowable limit increase/decrease values are being returned"
@@ -18471,7 +18591,7 @@
           "ccsAccountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               },
               {
                 "description": "Credit account to update the limit for"
@@ -18481,7 +18601,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               },
               {
                 "description": "Credit card to update the credit limit\r\n\t\t\t\t\t\tof its\r\n\t\t\t\t\t\tdefault account"
@@ -18682,7 +18802,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           }
@@ -19070,7 +19190,7 @@
           "ccsAccountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               },
               {
                 "description": "Whenever a service does an update/action on an\r\n\t\t\t\t\t\taccount and requires the account to be\r\n\t\t\t\t\t\tspecified, the account\r\n\t\t\t\t\t\tidentifier is used."
@@ -19080,7 +19200,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -19210,7 +19330,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               }
             ]
           },
@@ -19774,7 +19894,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -19851,7 +19971,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               }
             ]
           },
@@ -20069,7 +20189,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -20845,113 +20965,73 @@
         },
         "description": ""
       },
-      "tns_InquireCreditCardHimayateeProgramRequest": {
-        "title": "tns_InquireCreditCardHimayateeProgramRequest",
+      "InquireCreditCardHimayateeProgramRequestType": {
+        "title": "InquireCreditCardHimayateeProgramRequestType",
         "type": "object",
         "properties": {
           "InquireCreditCardHimayateeProgramRequestDetails": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_InquireCreditCardHimayateeProgramRequestDetailsType"
-              }
-            ]
+            "$ref": "#/components/schemas/InquireCreditCardHimayateeProgramRequestDetailsType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_InquireCreditCardHimayateeProgramResponse": {
-        "title": "tns_InquireCreditCardHimayateeProgramResponse",
+      "InquireCreditCardHimayateeProgramResponseType": {
+        "title": "InquireCreditCardHimayateeProgramResponse",
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_inquirecreditcardmiayateeprogramresponsetype"
-              }
-            ]
+            "$ref": "#/components/schemas/inquirecreditcardmiayateeprogramresponsetype"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/fault_FaultType"
-              }
-            ]
+            "$ref": "../../commonschemas/fault.json#/FaultType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_InquireCreditCardHimayateeProgramRequestDetailsType": {
-        "title": "tns_InquireCreditCardHimayateeProgramRequestDetailsType",
+      "InquireCreditCardHimayateeProgramRequestDetailsType": {
+        "title": "InquireCreditCardHimayateeProgramRequestDetailsType",
         "type": "object",
         "properties": {
           "ccsAccountIdentifier": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
-              },
-              {
-                "description": "Whenever a service does an update/action on an\r\n\t\t\t\t\t\taccount and requires the account to be specified, the account\r\n\t\t\t\t\t\tidentifier is used."
-              }
-            ]
+            "$ref": "#/components/schemas/ccsAccountIdentifierType",
+            "description": "Whenever a service does an update/action on an account and requires the account to be specified, the account identifier is used."
           },
           "cardIdentifier": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
-              },
-              {
-                "description": "Any service with an operation on a card expects\r\n\t\t\t\t\t\tthe Card Identifier to get the card.\r\n\t\t\t\t\t\tEither PAN or VPAN need to be\r\n\t\t\t\t\t\tspecified. The sequence number can be\r\n\t\t\t\t\t\tskipped and will be defaulted\r\n\t\t\t\t\t\tto 0. The card expiry date can be\r\n\t\t\t\t\t\tused to identify which card\r\n\t\t\t\t\t\tplastic is required. In case not\r\n\t\t\t\t\t\tspecified, the latest card with\r\n\t\t\t\t\t\tthe specified PAN or VPAN will be\r\n\t\t\t\t\t\ttaken into consideration."
-              }
-            ]
+            "$ref": "#/components/schemas/cardIdentifierType",
+            "description": "Any service with an operation on a card expects the Card Identifier to get the card. Either PAN or VPAN need to be specified. The sequence number can be skipped and will be defaulted to 0. The card expiry date can be used to identify which card plastic is required. In case not specified, the latest card with the specified PAN or VPAN will be taken into consideration."
           }
-        },
-        "description": ""
+        }
       },
-      "tns_inquirecreditcardmiayateeprogramresponsetype": {
-        "title": "tns_inquirecreditcardmiayateeprogramresponsetype",
+      "inquirecreditcardmiayateeprogramresponsetype": {
+        "title": "inquirecreditcardmiayateeprogramresponsetype",
         "type": "object",
         "properties": {
           "ccsAccountIdentifier": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
-              },
-              {
-                "description": "Whenever a service does an update/action on an\r\n\t\t\t\t\t\taccount and requires the account to be specified,\r\n\t\t\t\t\t\tthe account\r\n\t\t\t\t\t\tidentifier is used."
-              }
-            ]
+            "$ref": "#/components/schemas/ccsAccountIdentifierType",
+            "description": " Whenever a service does an update/action on an account and requires the account to be specified, the account identifier is used. "
           },
           "count": {
             "type": "integer",
-            "description": "count",
-            "format": "int32"
+            "format": "int32",
+            "description": "count"
           },
           "insuranceProductList": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_insuranceProductListType"
-              }
-            ]
+            "$ref": "#/components/schemas/insuranceProductListType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_insuranceProductListType": {
-        "title": "tns_insuranceProductListType",
+      "insuranceProductListType": {
+        "title": "insuranceProductListType",
         "type": "object",
         "properties": {
           "insuranceProduct": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/tns_insuranceProductType"
-            },
-            "description": ""
+              "$ref": "#/components/schemas/insuranceProductType"
+            }
           }
-        },
-        "description": ""
+        }
       },
-      "tns_insuranceProductType": {
-        "title": "tns_insuranceProductType",
+      "insuranceProductType": {
+        "title": "insuranceProductType",
         "type": "object",
         "properties": {
           "accountInsuranceId": {
@@ -20968,43 +21048,37 @@
           },
           "activeFlag": {
             "type": "integer",
-            "description": "activeFlag",
-            "format": "int32"
+            "format": "int32",
+            "description": "activeFlag"
           },
           "statusCode": {
             "type": "string",
             "description": "statusCode"
           },
           "lastStatusChangeDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
-            "description": "lastStatusChangeDate"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional"
           },
           "cancelReason": {
             "type": "string",
             "description": "cancelReason"
           },
           "cancelDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional",
             "description": "cancelDate"
           },
           "effectiveDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional",
             "description": "effectiveDate"
           },
           "dateLastBilled": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional",
             "description": "dateLastBilled"
           },
           "amountLastBilled": {
-            "type": "number",
+            "$ref": "../../commonschemas/schemas.json#/Amount",
             "description": "amountLastBilled"
           }
-        },
-        "description": ""
+        }
       },
       "tns_UpdateCreditCardHimayateeProgramStatusRequest": {
         "title": "tns_UpdateCreditCardHimayateeProgramStatusRequest",
@@ -21113,7 +21187,7 @@
           "ccsAccountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               },
               {
                 "description": "Whenever a service does an update/action on an\r\n\t\t\t\t\t\taccount and requires the account to be specified,\r\n\t\t\t\t\t\tthe account\r\n\t\t\t\t\t\tidentifier is used."
@@ -21123,7 +21197,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               },
               {
                 "description": "Any service with an operation on a card expects\r\n\t\t\t\t\t\tthe Card Identifier to get the card.\r\n\t\t\t\t\t\tEither PAN or VPAN need to be\r\n\t\t\t\t\t\tspecified. The sequence number can be\r\n\t\t\t\t\t\tskipped and will be defaulted\r\n\t\t\t\t\t\tto 0. The card expiry date can be\r\n\t\t\t\t\t\tused to identify which card\r\n\t\t\t\t\t\tplastic is required. In case not\r\n\t\t\t\t\t\tspecified, the latest card with\r\n\t\t\t\t\t\tthe specified PAN or VPAN will be\r\n\t\t\t\t\t\ttaken into consideration."
@@ -21187,7 +21261,7 @@
           "accountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               },
               {
                 "description": "Whenever a service does an update/action on an\r\n\t\t\t\t\t\taccount and requires the account to be specified,\r\n\t\t\t\t\t\tthe account\r\n\t\t\t\t\t\tidentifier is used."
@@ -21197,7 +21271,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -21417,7 +21491,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -21502,7 +21576,7 @@
           "transactionSearchOrder": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_TransactionSearchOrderType"
+                "$ref": "#/components/schemas/TransactionSearchOrderType"
               },
               {
                 "description": "Specifies the order in which the transactions\r\n\t\t\t\t\t\tshould be returned. In case not specified, date\r\n\t\t\t\t\t\tlocal desc is used\r\n\t\t\t\t\t\tby default"
@@ -21554,85 +21628,58 @@
         },
         "description": ""
       },
-      "tns_searchFilterCreditCardTransactionsType": {
-        "title": "tns_searchFilterCreditCardTransactionsType",
+      "searchFilterCreditCardTransactionsType": {
+        "title": "searchFilterCreditCardTransactionsType",
         "type": "object",
         "properties": {
           "includeOnlyPosted": {
             "type": "boolean",
-            "description": "Specifies if only posted transactions are\r\n\t\t\t\t\t\trequired or not. If not specified, both posted\r\n\t\t\t\t\t\tand pending\r\n\t\t\t\t\t\ttransactions are returned."
+            "description": "Specifies if only posted transactions are required or not. If not specified, both posted\r\n\t\t\t\t\t\tand pending\r\n\t\t\t\t\t\ttransactions are returned."
           },
           "transactionSearchOrder": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_TransactionSearchOrderType"
-              },
-              {
-                "description": "Specifies the order in which the transactions\r\n\t\t\t\t\t\tshould be returned. In case not specified, date\r\n\t\t\t\t\t\tlocal desc is used\r\n\t\t\t\t\t\tby default"
-              }
-            ]
+            "$ref": "#/components/schemas/TransactionSearchOrderType",
+            "description": "Specifies the order in which the transactions should be returned. In case not specified, date local desc is used by default"
           },
           "excludeItemTypeList": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_excludeItemTypeListType"
-              }
-            ]
+            "$ref": "#/components/schemas/excludeItemTypeListType"
           },
           "fromDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional1",
             "description": "Specifies Transactions from date"
           },
           "toDate": {
-            "pattern": "([0-9]){8}|()",
-            "type": "string",
-            "description": "Specifies Transactions To date"
+            "$ref": "../../commonschemas/schemas.json#/MWDateOptional1",
+            "description": "Specifies Transactions to date"
           },
           "fromAmount": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_AmountOptional"
-              },
-              {
-                "description": "Specifies Transactions from Amount"
-              }
-            ]
+            "$ref": "../../commonschemas/schemas.json#/AmountOptional",
+            "description": "Specifies Transactions from Amount"
           },
           "toAmount": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_AmountOptional"
-              },
-              {
-                "description": "Specifies Transactions To Amount"
-              }
-            ]
+            "$ref": "../../commonschemas/schemas.json#/AmountOptional",
+            "description": "Specifies Transactions to Amount"
           },
           "transactionsMethod": {
             "type": "string",
-            "description": "Specifies Transactions Type credit/debit\r\n\t\t\t\t\t\t(in/out)"
+            "description": "Specifies Transactions Type credit/debit (in/out)"
           },
           "transactionsType": {
             "type": "string",
-            "description": "Specifies Transactions Type POS, Online etc.\r\n\t\t\t\t\t\t(Code to retrieved from Cortex)"
+            "description": "Specifies Transactions Type POS, Online etc.(Code to retrieved from Cortex)"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_excludeItemTypeListType": {
-        "title": "tns_excludeItemTypeListType",
+      "excludeItemTypeListType": {
+        "title": "excludeItemTypeListType",
         "type": "object",
         "properties": {
           "itemType": {
             "type": "array",
             "items": {
               "type": "string"
-            },
-            "description": ""
+            }
           }
-        },
-        "description": ""
+        }
       },
       "tns_messageClassListType": {
         "title": "tns_messageClassListType",
@@ -21679,8 +21726,8 @@
         "type": "integer",
         "description": "Individual action code to include in the search.\r\n\t\t\t\tSupported values\r\n\r\n\t\t\t\t0 - Approved 1 - Declined No Pick Up 2 -\r\n\t\t\t\tDeclined\r\n\t\t\t\tWith Pick Up 9 - System Error"
       },
-      "tns_TransactionSearchOrderType": {
-        "title": "tns_TransactionSearchOrderType",
+      "TransactionSearchOrderType": {
+        "title": "TransactionSearchOrderType",
         "type": "object",
         "properties": {
           "dateLocalAsc": {
@@ -21699,8 +21746,7 @@
             "type": "boolean",
             "description": "Specifies that the transactions should be\r\n\t\t\t\t\t\tordered by local time descending (newest to oldest).\r\n\t\t\t\t\t\tShould be\r\n\t\t\t\t\t\tskipped in case time local asc is specified"
           }
-        },
-        "description": ""
+        }
       },
       "tns_requestedCurrencyListType": {
         "title": "tns_requestedCurrencyListType",
@@ -22073,7 +22119,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -22693,7 +22739,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -23318,14 +23364,14 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
           "accountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               }
             ]
           },
@@ -23507,14 +23553,14 @@
           "accountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               }
             ]
           },
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -23919,7 +23965,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               },
               {
                 "description": "Page details with the results returned. Returned\r\n\t\t\t\t\t\tin case the page setup in the request does not specify to skip the\r\n\t\t\t\t\t\tcount"
@@ -24450,7 +24496,7 @@
           "ccsAccountIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_ccsAccountIdentifierType"
+                "$ref": "#/components/schemas/ccsAccountIdentifierType"
               },
               {
                 "description": "Credit account to update the cash limit for.\r\n\t\t\t\t\t\t\tNot\r\n\t\t\t\t\t\t\trequired in case the card is specified. If both card and\r\n\t\t\t\t\t\t\taccount\r\n\t\t\t\t\t\t\tare specified, a check is done to make sure they are\r\n\t\t\t\t\t\t\tlinked. If\r\n\t\t\t\t\t\t\tonly card specified, the default account of the card is\r\n\t\t\t\t\t\t\tused"
@@ -24460,7 +24506,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               },
               {
                 "description": "Credit card to update the cash limit of its\r\n\t\t\t\t\t\t\tdefault account. Not required in case the account is specified.\r\n\t\t\t\t\t\t\tIf\r\n\t\t\t\t\t\t\tboth card and account are specified, a check is done to make\r\n\t\t\t\t\t\t\tsure\r\n\t\t\t\t\t\t\tboth are linked"
@@ -24723,7 +24769,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               },
               {
                 "description": "Credit card to inquire insurance products\r\n\t\t\t\t\t\t\tfor.\r\n\t\t\t\t\t\t\tNot required in case the account is\r\n\t\t\t\t\t\t\tspecified. If both card and\r\n\t\t\t\t\t\t\taccount are\r\n\t\t\t\t\t\t\tspecified, a check is done to make sure both\r\n\t\t\t\t\t\t\tare linked"
@@ -24815,7 +24861,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               }
             ]
           },
@@ -25261,7 +25307,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               },
               {
                 "description": "Credit card to inquire statement summary\r\n\t\t\t\t\t\t\tentries\r\n\t\t\t\t\t\t\tfor. If specified and the account is not, only the default\r\n\t\t\t\t\t\t\taccount\r\n\t\t\t\t\t\t\tof this card will have the statement summary returned.\r\n\t\t\t\t\t\t\tChecked if\r\n\t\t\t\t\t\t\tlinked to the specified entity"
@@ -25319,7 +25365,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               },
               {
                 "description": "Page details with the results returned. Returned\r\n\t\t\t\t\t\tin case the page setup in the request does not specify to skip the\r\n\t\t\t\t\t\tcount"
@@ -25973,7 +26019,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               }
             ]
           },
@@ -26071,7 +26117,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -26117,7 +26163,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -26237,7 +26283,7 @@
           "cardIdentifier": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_cardIdentifierType"
+                "$ref": "#/components/schemas/cardIdentifierType"
               }
             ]
           },
@@ -27118,7 +27164,7 @@
           "pageDetails": {
             "allOf": [
               {
-                "$ref": "#/components/schemas/tns_pageDetailsType"
+                "$ref": "#/components/schemas/pageDetailsType"
               }
             ]
           },
@@ -32686,7 +32732,7 @@
         "type": "object",
         "properties": {
           "CreditCardSupplementaryRequest": {
-            "$ref": "#/components/schemas/tns_CreditCardSupplementaryRequest"
+            "$ref": "#/components/schemas/CreditCardSupplementaryRequestType"
           }
         }
       },
@@ -32698,11 +32744,7 @@
         "type": "object",
         "properties": {
           "CreditCardSupplementaryResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_CreditCardSupplementaryResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/CreditCardSupplementaryResponseType"
           }
         }
       },
@@ -32714,7 +32756,7 @@
         "type": "object",
         "properties": {
           "CreditCardTransactionsRequest": {
-            "$ref": "#/components/schemas/tns_CreditCardTransactionsRequest"
+            "$ref": "#/components/schemas/CreditCardTransactionsRequestType"
           }
         }
       },
@@ -32726,11 +32768,7 @@
         "type": "object",
         "properties": {
           "CreditCardTransactionsResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_CreditCardTransactionsResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/CreditCardTransactionsResponseType"
           }
         }
       },
@@ -33480,7 +33518,7 @@
         "type": "object",
         "properties": {
           "InquireCreditCardHimayateeProgramRequest": {
-            "$ref": "#/components/schemas/tns_InquireCreditCardHimayateeProgramRequest"
+            "$ref": "#/components/schemas/InquireCreditCardHimayateeProgramRequestType"
           }
         }
       },
@@ -33492,11 +33530,7 @@
         "type": "object",
         "properties": {
           "InquireCreditCardHimayateeProgramResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_InquireCreditCardHimayateeProgramResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/InquireCreditCardHimayateeProgramResponseType"
           }
         }
       },
@@ -34457,14 +34491,13 @@
         },
         "description": ""
       },
-      "tns_option": {
-        "title": "tns_option",
+      "option": {
+        "title": "option",
         "enum": [
           "0",
           "1"
         ],
-        "type": "string",
-        "description": ""
+        "type": "string"
       },
       "tns_otherInformation": {
         "title": "tns_otherInformation",

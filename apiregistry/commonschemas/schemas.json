@@ -262,5 +262,37 @@
     "description": "Valid values of BBAN : 59200000027005, 59200000324005 etc",
     "minLength": "14",
     "maxLength": "14"
+  },
+  "Date": {
+    "type": "string",
+    "pattern": "((000[1-9])|(00[1-9][0-9])|(0[1-9][0-9]{2})|([1-9][0-9]{3}))-((0[1-9])|(1[012]))-((0[1-9])|([12][0-9])|(3[01]))",
+    "description": "Represents the date in the format of yyyy-mm-dd Valid values are : 2013-05-22 etc"
+  },
+  "MWTime": {
+    "type": "string",
+    "pattern": "([0-9]){4}|([0-9]){6})",
+    "description": "Represents the time in the format of hhmm or hhmmss (hh-hours ; mm - minutes; ss - seconds). Valid values are : 053456 etc"
+  },
+  "MobileNumberOptional": {
+    "type": "string",
+    "pattern": "[0-9]{9,15}|()",
+    "description": "Mobile phone number. Valid Values are : 966554325688 , 00966554325688, 554325688 etc"
+  },
+  "PageNumber": {
+    "type": "integer",
+    "format": "int32",
+    "minimum": 0,
+    "maxLength": 2,
+    "description": "Page Number"
+  },
+  "Merchant": {
+    "type": "string",
+    "maxLength": 25,
+    "description": "A string of maximum length 25"
+  },
+  "ExchangeRate": {
+    "type": "number",
+    "format": "double",
+    "maxLength": 12
   }
 }
