@@ -10016,14 +10016,7 @@
             "description": "List of card statuses required in the response.If multiple values are required, these should be separated by -\r\n\r\n\t\t\t\t\t\t\tThe current supported cortex card statuses are the below\r\n\r\n\t\t\t\t\t\t\tValue\r\n\t\t\t\t\t\t\tDescription\r\n\t\t\t\t\t\t\t00 NORMAL\r\n\t\t\t\t\t\t\t01 PIN TRIES EXCEEDED\r\n\t\t\t\t\t\t\t02 NOT YET ISSUED\r\n\t\t\t\t\t\t\t03 CARD\r\n\t\t\t\t\t\t\tEXPIRED\r\n\t\t\t\t\t\t\t04 LOST (equivalent to block code L)\r\n\t\t\t\t\t\t\t05 STOLEN (equivalent\r\n\t\t\t\t\t\t\tto block code S)\r\n\t\t\t\t\t\t\t06 CUSTOMER CLOSE (equivalent to block code C)\r\n\t\t\t\t\t\t\t07\r\n\t\t\t\t\t\t\tBANK CANCELED\r\n\t\t\t\t\t\t\t08 FRAUD (equivalent to block code O)\r\n\t\t\t\t\t\t\t09 DAMAGED\r\n\t\t\t\t\t\t\t(equivalent to block code G)\r\n\t\t\t\t\t\t\t20 PENDING ISSUANCE (printing)\r\n\t\t\t\t\t\t\t21 CARD\r\n\t\t\t\t\t\t\tEXTRACTED (embossing file generated for bulk issuance)\r\n\t\t\t\t\t\t\t22\r\n\t\t\t\t\t\t\tEXTRACTION FAILED (embossing file generation failed for bulk\r\n\t\t\t\t\t\t\tissuance)\r\n\t\t\t\t\t\t\t23 FAILED AT BUREAU (bulk issuance printing failed)\r\n\t\t\t\t\t\t\t24\r\n\t\t\t\t\t\t\tPRINTING FAILED\r\n\t\t\t\t\t\t\t30 PENDING ACTIVATION\r\n\t\t\t\t\t\t\t40 AGGREEMENT (equivalent to\r\n\t\t\t\t\t\t\tblock code E)\r\n\t\t\t\t\t\t\t42 CLOSED BY NCB (equivalent to block code K)\r\n\t\t\t\t\t\t\t44\r\n\t\t\t\t\t\t\tFRAUD CUSTOMER REQUESTED (equivalent to block code P)\r\n\t\t\t\t\t\t\t45 CUSTOMER\r\n\t\t\t\t\t\t\tDEAD (equivalent to block code D)\r\n\t\t\t\t\t\t\t46 CHANGE PRODUCT (equivalent to\r\n\t\t\t\t\t\t\tblock code X)\r\n\t\t\t\t\t\t\t48 NOT RENEWED (equivalent to block code N)\r\n\t\t\t\t\t\t\t49 SAMA\r\n\t\t\t\t\t\t\tBLOCKED (equivalent to block code J)\r\n\t\t\t\t\t\t\t50 RISK STOPPED (equivalent\r\n\t\t\t\t\t\t\tto block code Q)\r\n\t\t\t\t\t\t\t51 FRAUD APPLICANT (equivalent to block code F)\r\n\t\t\t\t\t\t\t52 INACTIVE (equivalent to block code I)\r\n\t\t\t\t\t\t\t53 COURT JUDGEMENT\r\n\t\t\t\t\t\t\t54\r\n\t\t\t\t\t\t\tExpired ID (equivalent to block code M)\r\n\t\t\t\t\t\t\t55 RETURNED CARD\r\n\t\t\t\t\t\t\t(equivalent to block code R)\r\n\t\t\t\t\t\t\t56 CUSTOMER CANCELED (equivalent to\r\n\t\t\t\t\t\t\tblock code T)\r\n\t\t\t\t\t\t\t57 TEMP BLOCK (equivalent to block code U)\r\n\t\t\t\t\t\t\t86 PILOT\r\n\t\t\t\t\t\t\tBLOCK\r\n\t\t\t\t\t\t\t98 PURGE (equivalent to block code P)\r\n\t\t\t\t\t\t\t99 COLLECTION"
           },
           "option": {
-            "oneOf": [
-              {
-                "nullable": true
-              },
-              {
-                "$ref": "#/components/schemas/option"
-              }
-            ],
+            "$ref": "#/components/schemas/option",
             "description": "OPTION can have below values\r\n\t\t\t\t\t\t\t\"0\" - IT will get\r\n\t\t\t\t\t\t\tSupplementary Card linked with Primary Card\r\n\t\t\t\t\t\t\t\"1\" - IT will get all\r\n\t\t\t\t\t\t\tSupplementary Cards and Primary Cards based on\r\n\t\t\t\t\t\t\tAccount ID"
           }
         }
@@ -34495,7 +34488,8 @@
         "title": "option",
         "enum": [
           "0",
-          "1"
+          "1",
+          ""
         ],
         "type": "string"
       },

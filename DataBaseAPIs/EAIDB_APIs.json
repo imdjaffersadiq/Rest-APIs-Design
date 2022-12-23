@@ -1,0 +1,217 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "EAI Database API",
+		"version": "1.0",
+		"description": "Retrieves records from EAI database"
+	},
+	"servers": [{
+		"url": "https://mw-api-3scale-apicast-staging.apps.com:443/api/connector/db/eaidb"
+	}],
+	"paths": {
+		"/v1/GetCustomerRecordsFromATMM": {
+			"post": {
+				"tags": [
+					"EAI DB API"
+				],
+				"description": "Retrieves list of debit cards of customer",
+				"operationId": "GetCustomerRecordsFromATMM",
+				"parameters": [{
+						"name": "Authorization",
+						"in": "header",
+						"description": "JWT bearer token",
+						"required": true,
+						"style": "simple",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "ServiceHeader",
+						"in": "header",
+						"description": "having channel details , locale",
+						"required": true,
+						"style": "simple",
+						"schema": {
+							"$ref": "../../commonschemas/header.json#/ServiceHeader"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendRequest"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "Successfully retrieved the response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendResponse"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "400 Bad request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "401 Unauthorized request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "404 API Not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"405": {
+						"description": "405 Method Not Allowed",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "429 Too Many Requests",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "500 Internal server error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"503": {
+						"description": "503 Service Unavailable",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"CustomerRecordsFromATMMBackendRequest": {
+				"type": "object",
+				"properties": {
+					"CustomerRecordsFromATMMBackendRequest": {
+						"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendRequesType"
+					}
+				}
+			},
+			"CustomerRecordsFromATMMBackendResponse": {
+				"type": "object",
+				"properties": {
+					"CustomerRecordsFromATMMBackendResponse": {
+						"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendResponseType"
+					}
+				}
+			},
+			"CustomerRecordsFromATMMBackendRequesType": {
+				"type": "object",
+				"properties": {
+					"CIF_NO": {
+						"type": "string"
+					}
+				}
+			},
+			"CustomerRecordsFromATMMBackendResponseType": {
+			   "type":"object",
+                  "properties":{
+				"ATM": {
+				"type": "array",
+				"items": {
+
+					"$ref": "#/components/schemas/ATMRecordType"
+
+				}}}
+			},
+
+			"ATMRecordType": {
+				"type": "object",
+				"properties": {
+					
+						"Pan": {
+							"type": "string",
+							
+						},
+						"Type": {
+							"type": "string"
+						},
+						"Status": {
+							"type": "string"
+						},
+						"Purchase": {
+							"type": "string"
+						},
+						"Total": {
+							"type": "string"
+						},
+						"TCheck": {
+							"type": "string"
+						},
+						"Transfer": {
+							"type": "string"
+						},
+						"Expires": {
+							"type": "string"
+						},
+						"AccNo": {
+							"type": "string"
+						}
+					}
+				
+			}
+
+		}
+	},
+	"tags": [{
+		"name": "EAI DB API",
+		"description": ""
+	}]
+}
