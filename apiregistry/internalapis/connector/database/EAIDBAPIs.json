@@ -36,7 +36,7 @@
 						"required": true,
 						"style": "simple",
 						"schema": {
-							"$ref": "./../commonschemas/header.json#/ServiceHeader"
+							"$ref": "../../../commonschemas/header.json#/ServiceHeader"
 						}
 					}
 				],
@@ -67,7 +67,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "./../commonschemas/httpError.json#/httpErrorResponse"
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
 								}
 							}
 						}
@@ -77,7 +77,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "./../commonschemas/httpError.json#/httpErrorResponse"
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
 								}
 							}
 						}
@@ -87,7 +87,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "./../commonschemas/httpError.json#/httpErrorResponse"
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
 								}
 							}
 						}
@@ -97,7 +97,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "./../commonschemas/httpError.json#/httpErrorResponse"
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
 								}
 							}
 						}
@@ -107,7 +107,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "./../commonschemas/httpError.json#/httpErrorResponse"
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
 								}
 							}
 						}
@@ -117,7 +117,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "./../commonschemas/httpError.json#/httpErrorResponse"
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
 								}
 							}
 						}
@@ -127,7 +127,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "./../commonschemas/httpError.json#/httpErrorResponse"
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
 								}
 							}
 						}
