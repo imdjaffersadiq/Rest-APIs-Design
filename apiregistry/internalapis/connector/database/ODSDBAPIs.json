@@ -1,4 +1,4 @@
-{
+{ 
    "openapi": "3.0.3",
    "info": {
       "title": "ODS API",
@@ -11,13 +11,13 @@
       }
    ],
    "paths": {
-      "/v1/customeroneview": {
+      "/v1/GetCustomerOneView": {
          "post": {
             "tags": [
                "ODS API"
             ],
             "description": "Retrieves customer's products (current/gold account,credit card ..) and  provides one view of all banking products  ",
-            "operationId": "CustomerOneView",
+            "operationId": "GetCustomerOneView",
             "parameters": [
                {
                   "name": "Authorization",
@@ -45,7 +45,7 @@
                "content": {
                   "application/json": {
                      "schema": {
-                        "$ref": "#/components/schemas/CustomerOneViewBackendRequest"
+                        "$ref": "#/components/schemas/CustomerOneViewRequest"
                      }
                   }
                },
@@ -57,7 +57,7 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$ref": "#/components/schemas/CustomerOneViewBackendResponse"
+                           "$ref": "#/components/schemas/CustomerOneViewResponse"
                         }
                      }
                   }
@@ -136,13 +136,13 @@
             "deprecated": false
          }
       },
-      "/v1/customerdetails": {
+      "/v1/GetCustomerDetails": {
          "post": {
             "tags": [
                "ODS API"
             ],
             "description": "Retrieves customer details such as name, address, language ... ",
-            "operationId": "CustomerDetails",
+            "operationId": "GetCustomerDetails",
             "parameters": [
                {
                   "name": "Authorization",
@@ -170,7 +170,7 @@
                "content": {
                   "application/json": {
                      "schema": {
-                        "$ref": "#/components/schemas/CustomerDetailsBackendRequest"
+                        "$ref": "#/components/schemas/CustomerDetailsRequest"
                      }
                   }
                },
@@ -182,7 +182,7 @@
                   "content": {
                      "application/json": {
                         "schema": {
-                           "$ref": "#/components/schemas/CustomerDetailsBackendResponse"
+                           "$ref": "#/components/schemas/CustomerDetailsResponse"
                         }
                      }
                   }
@@ -264,15 +264,15 @@
    },
    "components": {
       "schemas": {
-         "CustomerOneViewBackendRequest": {
+         "CustomerOneViewRequest": {
             "type": "object",
             "properties": {
-               "CustomerOneViewBackendRequest": {
-                  "$ref": "#/components/schemas/CustomerOneViewBackendRequestType"
+               "CustomerOneViewRequest": {
+                  "$ref": "#/components/schemas/CustomerOneViewRequestType"
                }
             }
          },
-         "CustomerOneViewBackendRequestType": {
+         "CustomerOneViewRequestType": {
             "type": "object",
             "properties": {
                "cif": {
@@ -304,15 +304,15 @@
                }
             }
          },
-         "CustomerOneViewBackendResponse": {
+         "CustomerOneViewResponse": {
             "type": "object",
             "properties": {
-               "CustomerOneViewBackendResponse": {
-                  "$ref": "#/components/schemas/CustomerOneViewBackendResponseType"
+               "CustomerOneViewResponse": {
+                  "$ref": "#/components/schemas/CustomerOneViewResponseType"
                }
             }
          },
-         "CustomerOneViewBackendResponseType": {
+         "CustomerOneViewResponseType": {
             "type": "object",
             "properties": {
                "portfolio": {
@@ -667,8 +667,7 @@
             }
          },
          "LeadType": {
-            "type": "array",
-            "items": {
+           
                "type": "object",
                "properties": {
                   "LEAD_ID": {
@@ -720,7 +719,7 @@
                      "type": "string"
                   }
                }
-            }
+            
          },
          "OneViewAccountType": {
             "type": "object",
@@ -1399,15 +1398,15 @@
                }
             }
          },
-         "CustomerDetailsBackendRequest": {
+         "CustomerDetailsRequest": {
             "type": "object",
             "properties": {
-               "CustomerDetailsBackendRequest": {
-                  "$ref": "#/components/schemas/CustomerDetailsBackendRequestType"
+               "CustomerDetailsRequest": {
+                  "$ref": "#/components/schemas/CustomerDetailsRequestType"
                }
             }
          },
-         "CustomerDetailsBackendRequestType": {
+         "CustomerDetailsRequestType": {
             "type": "object",
             "properties": {
                "cif": {
@@ -1436,15 +1435,15 @@
                }
             }
          },
-         "CustomerDetailsBackendResponse": {
+         "CustomerDetailsResponse": {
             "type": "object",
             "properties": {
-               "CustomerDetailsBackendResponse": {
-                  "$ref": "#/components/schemas/CustomerDetailsBackendResponseType"
+               "CustomerDetailsResponse": {
+                  "$ref": "#/components/schemas/CustomerDetailsResponseType"
                }
             }
          },
-         "CustomerDetailsBackendResponseType": {
+         "CustomerDetailsResponseType": {
             "type": "object",
             "properties": {
                "P_LANG": {

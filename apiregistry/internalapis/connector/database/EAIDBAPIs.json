@@ -5,21 +5,18 @@
 		"version": "1.0",
 		"description": "Retrieves records from EAI database"
 	},
-	"servers": [
-		{
-			"url": "https://mw-api-3scale-apicast-staging.apps.com:443/api/connector/db/eaidb"
-		}
-	],
+	"servers": [{
+		"url": "https://mw-api-3scale-apicast-staging.apps.com:443/api/connector/db/eaidb"
+	}],
 	"paths": {
-		"/v1/GetCustomerRecordsFromATMM": {
+		"/v1/GetCustomerATMRecords": {
 			"post": {
 				"tags": [
 					"EAI DB API"
 				],
 				"description": "Retrieves list of debit cards of customer",
-				"operationId": "GetCustomerRecordsFromATMM",
-				"parameters": [
-					{
+				"operationId": "GetCustomerATMRecords",
+				"parameters": [{
 						"name": "Authorization",
 						"in": "header",
 						"description": "JWT bearer token",
@@ -45,7 +42,7 @@
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendRequest"
+								"$ref": "#/components/schemas/CustomerATMRecordsRequest"
 							}
 						}
 					},
@@ -57,7 +54,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendResponse"
+									"$ref": "#/components/schemas/CustomerATMRecordsResponse"
 								}
 							}
 						}
@@ -139,23 +136,23 @@
 	},
 	"components": {
 		"schemas": {
-			"CustomerRecordsFromATMMBackendRequest": {
+			"CustomerATMRecordsRequest": {
 				"type": "object",
 				"properties": {
-					"CustomerRecordsFromATMMBackendRequest": {
-						"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendRequesType"
+					"CustomerATMRecordsRequest": {
+						"$ref": "#/components/schemas/CustomerATMRecordsRequestType"
 					}
 				}
 			},
-			"CustomerRecordsFromATMMBackendResponse": {
+			"CustomerATMRecordsResponse": {
 				"type": "object",
 				"properties": {
-					"CustomerRecordsFromATMMBackendResponse": {
-						"$ref": "#/components/schemas/CustomerRecordsFromATMMBackendResponseType"
+					"CustomerATMRecordsResponse": {
+						"$ref": "#/components/schemas/CustomerATMRecordsResponseType"
 					}
 				}
 			},
-			"CustomerRecordsFromATMMBackendRequesType": {
+			"CustomerATMRecordsRequestType": {
 				"type": "object",
 				"properties": {
 					"CIF_NO": {
@@ -163,7 +160,7 @@
 					}
 				}
 			},
-			"CustomerRecordsFromATMMBackendResponseType": {
+			"CustomerATMRecordsResponseType": {
 				"type": "object",
 				"properties": {
 					"ATM": {
@@ -208,10 +205,8 @@
 			}
 		}
 	},
-	"tags": [
-		{
-			"name": "EAI DB API",
-			"description": ""
-		}
-	]
+	"tags": [{
+		"name": "EAI DB API",
+		"description": ""
+	}]
 }
