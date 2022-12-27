@@ -1,4 +1,4 @@
-{ 
+{
    "openapi": "3.0.3",
    "info": {
       "title": "ODS API",
@@ -183,6 +183,131 @@
                      "application/json": {
                         "schema": {
                            "$ref": "#/components/schemas/CustomerDetailsResponse"
+                        }
+                     }
+                  }
+               },
+               "400": {
+                  "description": "400 Bad request",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                        }
+                     }
+                  }
+               },
+               "401": {
+                  "description": "401 Unauthorized request",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                        }
+                     }
+                  }
+               },
+               "404": {
+                  "description": "404 API Not found",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                        }
+                     }
+                  }
+               },
+               "405": {
+                  "description": "405 Method Not Allowed",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                        }
+                     }
+                  }
+               },
+               "429": {
+                  "description": "429 Too Many Requests",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                        }
+                     }
+                  }
+               },
+               "500": {
+                  "description": "500 Internal server error",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                        }
+                     }
+                  }
+               },
+               "503": {
+                  "description": "503 Service Unavailable",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                        }
+                     }
+                  }
+               }
+            },
+            "deprecated": false
+         }
+      },
+      "/v1/GetAccountType": {
+         "post": {
+            "tags": [
+               "ODS API"
+            ],
+            "description": "Retrieves Account Type such as Deposit,GL,Loan,CIF   ",
+            "operationId": "GetAccountType",
+            "parameters": [
+               {
+                  "name": "Authorization",
+                  "in": "header",
+                  "description": "JWT bearer token",
+                  "required": true,
+                  "style": "simple",
+                  "schema": {
+                     "type": "string"
+                  }
+               },
+               {
+                  "name": "ServiceHeader",
+                  "in": "header",
+                  "description": "having channel details , locale",
+                  "required": true,
+                  "style": "simple",
+                  "schema": {
+                     "$ref": "../../../commonschemas/header.json#/ServiceHeader"
+                  }
+               }
+            ],
+            "requestBody": {
+               "description": "",
+               "content": {
+                  "application/json": {
+                     "schema": {
+                        "$ref": "#/components/schemas/AccountTypeRequest"
+                     }
+                  }
+               },
+               "required": true
+            },
+            "responses": {
+               "200": {
+                  "description": "Successfully retrieved the response",
+                  "content": {
+                     "application/json": {
+                        "schema": {
+                           "$ref": "#/components/schemas/AccountTypeResponse"
                         }
                      }
                   }
@@ -667,59 +792,57 @@
             }
          },
          "LeadType": {
-           
-               "type": "object",
-               "properties": {
-                  "LEAD_ID": {
-                     "type": "string"
-                  },
-                  "PRODUCT_NAME": {
-                     "type": "string"
-                  },
-                  "STATUS_CD": {
-                     "type": "string"
-                  },
-                  "PRIORITY": {
-                     "type": "string"
-                  },
-                  "TAG": {
-                     "type": "string"
-                  },
-                  "IVR_FLG": {
-                     "type": "string"
-                  },
-                  "AOL_FLG": {
-                     "type": "string"
-                  },
-                  "AMBL_FLG": {
-                     "type": "string"
-                  },
-                  "DESC_EN": {
-                     "type": "string"
-                  },
-                  "DESC_AR": {
-                     "type": "string"
-                  },
-                  "SKIP_COUNTER": {
-                     "type": "string"
-                  },
-                  "BU_ID": {
-                     "type": "string"
-                  },
-                  "CIF_NUMBER": {
-                     "type": "string"
-                  },
-                  "CREATED_DT": {
-                     "type": "string"
-                  },
-                  "LAST_UPDATE_DT": {
-                     "type": "string"
-                  },
-                  "PRODUCT_SUB_CATEGORY_CD": {
-                     "type": "string"
-                  }
+            "type": "object",
+            "properties": {
+               "LEAD_ID": {
+                  "type": "string"
+               },
+               "PRODUCT_NAME": {
+                  "type": "string"
+               },
+               "STATUS_CD": {
+                  "type": "string"
+               },
+               "PRIORITY": {
+                  "type": "string"
+               },
+               "TAG": {
+                  "type": "string"
+               },
+               "IVR_FLG": {
+                  "type": "string"
+               },
+               "AOL_FLG": {
+                  "type": "string"
+               },
+               "AMBL_FLG": {
+                  "type": "string"
+               },
+               "DESC_EN": {
+                  "type": "string"
+               },
+               "DESC_AR": {
+                  "type": "string"
+               },
+               "SKIP_COUNTER": {
+                  "type": "string"
+               },
+               "BU_ID": {
+                  "type": "string"
+               },
+               "CIF_NUMBER": {
+                  "type": "string"
+               },
+               "CREATED_DT": {
+                  "type": "string"
+               },
+               "LAST_UPDATE_DT": {
+                  "type": "string"
+               },
+               "PRODUCT_SUB_CATEGORY_CD": {
+                  "type": "string"
                }
-            
+            }
          },
          "OneViewAccountType": {
             "type": "object",
@@ -1862,6 +1985,53 @@
                },
                "E_KYC_FLAG": {
                   "type": "string"
+               }
+            }
+         },
+         "AccountTypeRequest": {
+            "type": "object",
+            "properties": {
+               "AccountTypeRequest": {
+                  "$ref": "#/components/schemas/AccountTypeRequestType"
+               }
+            }
+         },
+         "AccountTypeRequestType": {
+            "type": "object",
+            "properties": {
+               "accountNumber": {
+                  "description": "Account Number",
+                  "type": "string"
+               }
+            }
+         },
+         "AccountTypeResponse": {
+            "type": "object",
+            "properties": {
+               "AccountTypeResponse": {
+                  "$ref": "#/components/schemas/AccountTypeResponseType"
+               }
+            }
+         },
+         "AccountTypeResponseType": {
+            "type": "object",
+            "properties": {
+               "cust_acct_no": {
+                  "type": "string"
+               },
+               "prim_acct": {
+                  "type": "string"
+               },
+               "account_system": {
+                  "description": "Type of Account such as Deposit,GL,Loan,CIF ",
+                  "type": "string"
+               },
+               "bancs_ind": {
+                  "type": "string"
+               },
+               "acct_type": {
+                  "type": "string",
+                  "description": "Account Type code such as 00,etc"
                }
             }
          }
