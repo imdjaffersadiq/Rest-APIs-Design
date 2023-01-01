@@ -7,7 +7,7 @@
 	},
 	"servers": [
 		{
-		"url": "https://mw-api-3scale-apicast-staging.apps.com:443/api/connector/configstore"
+			"url": "https://mw-api-3scale-apicast-staging.apps.com:443/api/connector/configstore"
 		}
 	],
 	"paths": {
@@ -16,7 +16,7 @@
 				"tags": [
 					"Application Config Store API"
 				],
-				"description": "Retrieves Config Store Categories like Accounts, Customer, CreditCard etc.",
+				"description": "Retrieves distinct Config Store Categories like Accounts, Customer, CreditCard etc.",
 				"operationId": "GetConfigStoreCategories",
 				"parameters": [
 					{
@@ -130,10 +130,10 @@
 				"tags": [
 					"Application Config Store API"
 				],
-				"description": "Retrieves Config Store data by Category or both Category and File name",
+				"description": "Retrieves Config Store data by Category and File Name",
 				"operationId": "GetConfigStoreData",
 				"parameters": [
-				{
+					{
 						"name": "Authorization",
 						"in": "header",
 						"description": "JWT bearer token",
@@ -257,12 +257,137 @@
 				"deprecated": false
 			}
 		},
+		"/v1/CreateConfigStoreData": {
+			"post": {
+				"tags": [
+					"Application Config Store API"
+				],
+				"description": "Creates new Config Store Categories and Files",
+				"operationId": "CreateConfigStoreData",
+				"parameters": [
+					{
+						"name": "Authorization",
+						"in": "header",
+						"description": "JWT bearer token",
+						"required": true,
+						"style": "simple",
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"name": "ServiceHeader",
+						"in": "header",
+						"description": "having channel details , locale",
+						"required": true,
+						"style": "simple",
+						"schema": {
+							"$ref": "../../../commonschemas/header.json#/ServiceHeader"
+						}
+					}
+				],
+				"requestBody": {
+					"description": "",
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateConfigStoreDataRequest"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "Successfully retrieved the response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CreateConfigStoreDataResponse"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "400 Bad request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "401 Unauthorized request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "404 API Not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"405": {
+						"description": "405 Method Not Allowed",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "429 Too Many Requests",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "500 Internal server error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					},
+					"503": {
+						"description": "503 Service Unavailable",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
 		"/v1/UpdateConfigStoreData": {
 			"put": {
 				"tags": [
 					"Application Config Store API"
 				],
-				"description": "Updates existing Config Store file content or creates new file/category",
+				"description": "Updates existing Config Store Files Data",
 				"operationId": "UpdateConfigStoreData",
 				"parameters": [
 					{
@@ -387,7 +512,7 @@
 				"tags": [
 					"Application Config Store API"
 				],
-				"description": "Deletes Config Store data by Category or File name",
+				"description": "Deletes Config Store data by Category and File Name",
 				"operationId": "DeleteConfigStoreData",
 				"parameters": [
 					{
@@ -526,12 +651,12 @@
 				}
 			},
 			"GetConfigStoreCategoriesResponseType": {
-			   "type":"object",
+				"type": "object",
 				"properties": {
-				"categoryList": {
-				"type": "array",
-					"items": {
-						"type": "string"
+					"categoryList": {
+						"type": "array",
+						"items": {
+							"type": "string"
 						}
 					}
 				}
@@ -545,17 +670,50 @@
 				}
 			},
 			"GetConfigStoreDataResponseType": {
-			   "type":"object",
+				"type": "object",
 				"properties": {
-						"category": {
-							"type": "string"						
-						},
-						"fileName": {
-							"type": "string"
-						},
-						"content": {
-							"type": "string"
-						}
+					"category": {
+						"type": "string"
+					},
+					"fileName": {
+						"type": "string"
+					},
+					"content": {
+						"type": "string"
+					}
+				}
+			},
+			"CreateConfigStoreDataRequest": {
+				"type": "object",
+				"properties": {
+					"CreateConfigStoreDataRequest": {
+						"$ref": "#/components/schemas/CreateConfigStoreDataRequestType"
+					}
+				}
+			},
+			"CreateConfigStoreDataResponse": {
+				"type": "object",
+				"properties": {
+					"CreateConfigStoreDataResponse": {
+						"$ref": "#/components/schemas/ConfigStoreDataResponseType"
+					}
+				}
+			},
+			"CreateConfigStoreDataRequestType": {
+				"type": "object",
+				"properties": {
+					"category": {
+						"type": "string"
+					},
+					"fileName": {
+						"type": "string"
+					},
+					"content": {
+						"type": "string"
+					},
+					"createdBy": {
+						"type": "string"
+					}
 				}
 			},
 			"UpdateConfigStoreDataRequest": {
@@ -570,64 +728,53 @@
 				"type": "object",
 				"properties": {
 					"UpdateConfigStoreDataResponse": {
-						"$ref": "#/components/schemas/UpdateConfigStoreDataResponseType"
+						"$ref": "#/components/schemas/ConfigStoreDataResponseType"
 					}
 				}
 			},
 			"UpdateConfigStoreDataRequestType": {
 				"type": "object",
 				"properties": {
-						"category": {
-							"type": "string"							
-						},
-						"fileName": {
-							"type": "string"
-						},
-						"content": {
-							"type": "string"
-						},
-						"createdBy": {
-							"type": "string"
-						},
-						"modifiedBy": {
-							"type": "string"
-						},
-						"modifiedDate": {
-							"type": "string",
-							"format":"date-time"
-						}
+					"category": {
+						"type": "string"
+					},
+					"fileName": {
+						"type": "string"
+					},
+					"content": {
+						"type": "string"
+					},
+					"modifiedBy": {
+						"type": "string"
+					},
+					"modifiedDate": {
+						"type": "string",
+						"format": "date-time"
+					}
 				}
 			},
-			"UpdateConfigStoreDataResponseType": {
-			   "type":"object",
-                "properties": {
-						"status": {
-							"type": "string"							
-						}
+			"ConfigStoreDataResponseType": {
+				"type": "object",
+				"properties": {
+					"status": {
+						"type": "string"
+					}
 				}
 			},
 			"DeleteConfigStoreDataResponse": {
 				"type": "object",
 				"properties": {
 					"DeleteConfigStoreDataResponse": {
-						"$ref": "#/components/schemas/DeleteConfigStoreDataResponseType"
+						"$ref": "#/components/schemas/ConfigStoreDataResponseType"
 					}
-				}
-			},
-			"DeleteConfigStoreDataResponseType": {
-			   "type":"object",
-                "properties": {
-						"status": {
-							"type": "string"						
-						}
 				}
 			}
 		}
 	},
 	"tags": [
 		{
-		"name": "Application Config Store API",
-		"description": ""
+			"name": "Application Config Store API",
+			"description": ""
 		}
 	]
 }
