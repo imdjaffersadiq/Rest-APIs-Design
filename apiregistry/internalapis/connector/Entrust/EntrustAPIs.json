@@ -1099,32 +1099,32 @@
         "deprecated": false
       }
     },
-    "/UserOTPGet": {
+    "/v1/UserOTPGet": {
       "post": {
         "tags": [
-          "EntrustWSI"
+          "Entrust APIs"
         ],
-        "summary": "UserOTPGet",
+        "description": "get the OTP for the given customer",
         "operationId": "UserOTPGet",
         "parameters": [
           {
-            "name": "ServiceHeader",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "type": "string"
             }
           },
           {
-            "name": "Security",
+            "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "$ref": "../../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1142,11 +1142,80 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserOTPGetResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -1155,32 +1224,32 @@
         "deprecated": false
       }
     },
-    "/UserOTPCreate": {
+    "/v1/UserOTPCreate": {
       "post": {
         "tags": [
-          "EntrustWSI"
+          "Entrust APIs"
         ],
-        "summary": "UserOTPCreate",
+        "description": "creates OTP for the given customer",
         "operationId": "UserOTPCreate",
         "parameters": [
           {
-            "name": "ServiceHeader",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "type": "string"
             }
           },
           {
-            "name": "Security",
+            "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "$ref": "../../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1198,11 +1267,80 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserOTPCreateResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -1894,8 +2032,8 @@
         },
         "description": ""
       },
-      "tns_UserOTPInfo": {
-        "title": "tns_UserOTPInfo",
+      "UserOTPInfo": {
+        "title": "UserOTPInfo",
         "required": [
           "OTP",
           "CreateDate",
@@ -1912,11 +2050,10 @@
           "ExpireDate": {
             "type": "string"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_UserOTPGet": {
-        "title": "tns_UserOTPGet",
+      "UserOTPGetRequestType": {
+        "title": "UserOTPGetRequestType",
         "required": [
           "UserId"
         ],
@@ -1928,32 +2065,22 @@
           "UserGroup": {
             "type": "string"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_UserOTPGetResponse": {
-        "title": "tns_UserOTPGetResponse",
+      "UserOTPGetResponseType": {
+        "title": "UserOTPGetResponseType",
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success1"
-              }
-            ]
+            "$ref": "#/components/schemas/UserOTPInfoType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_UserOTPCreate": {
-        "title": "tns_UserOTPCreate",
+      "UserOTPCreateRequestType": {
+        "title": "UserOTPCreateRequestType",
         "required": [
           "UserId"
         ],
@@ -1974,26 +2101,17 @@
             "description": "OTP life time value should be in  milliseconds",
             "format": "int64"
           }
-        },
-        "description": ""
+        }
       },
-      "tns_UserOTPCreateResponse": {
-        "title": "tns_UserOTPCreateResponse",
+      "UserOTPCreateResponseType": {
+        "title": "UserOTPCreateResponseType",
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success1"
-              }
-            ]
+            "$ref": "#/components/schemas/UserOTPInfoType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2014,11 +2132,7 @@
             "type": "string"
           },
           "AuthenticationType": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_AuthenticationType"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_AuthenticationType"
           },
           "TokenCode": {
             "type": "string"
@@ -2037,18 +2151,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2101,11 +2207,7 @@
             "type": "string"
           },
           "UserSetParameters": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserSetParameters"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserSetParameters"
           }
         },
         "description": ""
@@ -2115,18 +2217,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2183,18 +2277,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2258,11 +2344,7 @@
             "type": "string"
           },
           "MachineSecrets": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MachineSecrets"
-              }
-            ]
+            "$ref": "#/components/schemas/MachineSecrets"
           }
         },
         "description": ""
@@ -2272,18 +2354,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MachineSecretsType"
-              }
-            ]
+            "$ref": "#/components/schemas/MachineSecretsType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2313,18 +2387,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2353,11 +2419,7 @@
             "type": "string"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2383,18 +2445,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/MachineSecretsType"
-              }
-            ]
+            "$ref": "#/components/schemas/MachineSecretsType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2427,18 +2481,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success8"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success8"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2467,18 +2513,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success9"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success9"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2511,18 +2549,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success10"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success10"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2571,18 +2601,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success11"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success11"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2615,18 +2637,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success12"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success12"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2659,18 +2673,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success13"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success13"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2703,18 +2709,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success14"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success14"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2751,18 +2749,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success15"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success15"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2788,18 +2778,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_success16"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_success16"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2825,18 +2807,10 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_PVNRetrievalResponseType"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_PVNRetrievalResponseType"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2888,11 +2862,7 @@
             "type": "string"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2914,11 +2884,7 @@
             "type": "string"
           },
           "SharedSecrets": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/SharedSecrets"
-              }
-            ]
+            "$ref": "#/components/schemas/SharedSecrets"
           }
         },
         "description": ""
@@ -2931,11 +2897,7 @@
             "type": "string"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2980,11 +2942,7 @@
             "type": "string"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3019,11 +2977,7 @@
             "type": "string"
           },
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3036,11 +2990,7 @@
         "type": "object",
         "properties": {
           "UsernameToken": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/wsse_UsernameToken"
-              }
-            ]
+            "$ref": "#/components/schemas/wsse_UsernameToken"
           }
         },
         "description": ""
@@ -3120,14 +3070,8 @@
             "type": "string"
           },
           "authenticationType": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/header_authenticationType"
-              },
-              {
-                "description": "Can be: NONE, OTP, TOKEN"
-              }
-            ]
+            "$ref": "#/components/schemas/header_authenticationType",
+            "description": "Can be: NONE, OTP, TOKEN"
           },
           "IvrTransactionID": {
             "type": "string"
@@ -3188,11 +3132,7 @@
         "type": "object",
         "properties": {
           "AuthenticateGenericChallengeResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_AuthenticateGenericChallengeResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_AuthenticateGenericChallengeResponse"
           }
         }
       },
@@ -3216,11 +3156,7 @@
         "type": "object",
         "properties": {
           "CreatePVNResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_CreatePVNResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_CreatePVNResponse"
           }
         }
       },
@@ -3290,11 +3226,7 @@
         "type": "object",
         "properties": {
           "PVNRetrieveResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_PVNRetrieveResponse1"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_PVNRetrieveResponse1"
           }
         }
       },
@@ -3318,11 +3250,7 @@
         "type": "object",
         "properties": {
           "PVNUpdateResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_PVNUpdateResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_PVNUpdateResponse"
           }
         }
       },
@@ -3346,11 +3274,7 @@
         "type": "object",
         "properties": {
           "NewPVNResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_NewPVNResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_NewPVNResponse"
           }
         }
       },
@@ -3552,11 +3476,7 @@
         "type": "object",
         "properties": {
           "success": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_PVNRetrievalResponseType"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_PVNRetrievalResponseType"
           }
         }
       },
@@ -3565,11 +3485,7 @@
         "type": "object",
         "properties": {
           "fault": {
-            "allOf": [
-              {
-                "$ref": "../../../commonschemas/fault.json#/FaultType"
-              }
-            ]
+            "$ref": "../../../commonschemas/fault.json#/FaultType"
           }
         }
       },
@@ -3595,19 +3511,14 @@
         },
         "description": ""
       },
-      "tns_success1": {
-        "title": "tns_success1",
+      "UserOTPInfoType": {
+        "title": "UserOTPInfoType",
         "type": "object",
         "properties": {
           "UserOTPInfo": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserOTPInfo"
-              }
-            ]
+            "$ref": "#/components/schemas/UserOTPInfo"
           }
-        },
-        "description": ""
+        }
       },
       "UserGetType": {
         "title": "UserGetType",
@@ -3643,11 +3554,7 @@
         "type": "object",
         "properties": {
           "UserTokenAssignResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenAssignResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenAssignResult"
           }
         },
         "description": ""
@@ -3657,11 +3564,7 @@
         "type": "object",
         "properties": {
           "UserTokenCreateResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenCreateResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenCreateResult"
           }
         },
         "description": ""
@@ -3671,11 +3574,7 @@
         "type": "object",
         "properties": {
           "UserTokenDeleteResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenDeleteResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenDeleteResult"
           }
         },
         "description": ""
@@ -3685,11 +3584,7 @@
         "type": "object",
         "properties": {
           "UserTokenSetResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenSetResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenSetResult"
           }
         },
         "description": ""
@@ -3699,11 +3594,7 @@
         "type": "object",
         "properties": {
           "UserTokenUnassignResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenUnassignResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenUnassignResult"
           }
         },
         "description": ""
@@ -3713,11 +3604,7 @@
         "type": "object",
         "properties": {
           "UserTokenAuthenticateResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenAuthenticateResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenAuthenticateResult"
           }
         },
         "description": ""
@@ -3727,11 +3614,7 @@
         "type": "object",
         "properties": {
           "UserTokenActivateResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenActivateResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenActivateResult"
           }
         },
         "description": ""
@@ -3741,11 +3624,7 @@
         "type": "object",
         "properties": {
           "UserTokenActivateCompleteResult": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenActivateCompleteResult"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenActivateCompleteResult"
           }
         },
         "description": ""
@@ -3755,11 +3634,7 @@
         "type": "object",
         "properties": {
           "Tokens": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/Tokens"
-              }
-            ]
+            "$ref": "#/components/schemas/Tokens"
           }
         },
         "description": ""
@@ -3838,18 +3713,10 @@
             "default": true
           },
           "SharedSecrets": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/SharedSecrets"
-              }
-            ]
+            "$ref": "#/components/schemas/SharedSecrets"
           },
           "QaSecrets": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_QaSecrets"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_QaSecrets"
           }
         },
         "description": ""
@@ -4067,11 +3934,7 @@
         "type": "object",
         "properties": {
           "UserDeleteResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserDeleteResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserDeleteResponse"
           }
         }
       },
@@ -4119,11 +3982,7 @@
         "type": "object",
         "properties": {
           "UserMachineSecretCreateResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserMachineSecretCreateResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserMachineSecretCreateResponse"
           }
         }
       },
@@ -4147,11 +4006,7 @@
         "type": "object",
         "properties": {
           "UserMachineSecretDeleteResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserMachineSecretDeleteResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserMachineSecretDeleteResponse"
           }
         }
       },
@@ -4175,11 +4030,7 @@
         "type": "object",
         "properties": {
           "UserMachineSecretGetResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserMachineSecretGetResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserMachineSecretGetResponse"
           }
         }
       },
@@ -4203,11 +4054,7 @@
         "type": "object",
         "properties": {
           "UserMachineSecretListResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserMachineSecretListResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserMachineSecretListResponse"
           }
         }
       },
@@ -4219,7 +4066,7 @@
         "type": "object",
         "properties": {
           "UserOTPCreate": {
-            "$ref": "#/components/schemas/tns_UserOTPCreate"
+            "$ref": "#/components/schemas/UserOTPCreateRequestType"
           }
         }
       },
@@ -4231,11 +4078,7 @@
         "type": "object",
         "properties": {
           "UserOTPCreateResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserOTPCreateResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/UserOTPCreateResponseType"
           }
         }
       },
@@ -4247,7 +4090,7 @@
         "type": "object",
         "properties": {
           "UserOTPGet": {
-            "$ref": "#/components/schemas/tns_UserOTPGet"
+            "$ref": "#/components/schemas/UserOTPGetRequestType"
           }
         }
       },
@@ -4259,11 +4102,7 @@
         "type": "object",
         "properties": {
           "UserOTPGetResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserOTPGetResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/UserOTPGetResponseType"
           }
         }
       },
@@ -4287,11 +4126,7 @@
         "type": "object",
         "properties": {
           "UserSetResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserSetResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserSetResponse"
           }
         }
       },
@@ -4315,11 +4150,7 @@
         "type": "object",
         "properties": {
           "UserTokenActivateCompleteResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenActivateCompleteResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenActivateCompleteResponse"
           }
         }
       },
@@ -4343,11 +4174,7 @@
         "type": "object",
         "properties": {
           "UserTokenActivateResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenActivateResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenActivateResponse"
           }
         }
       },
@@ -4371,11 +4198,7 @@
         "type": "object",
         "properties": {
           "UserTokenAssignResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenAssignResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenAssignResponse"
           }
         }
       },
@@ -4399,11 +4222,7 @@
         "type": "object",
         "properties": {
           "UserTokenAuthenticateResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenAuthenticateResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenAuthenticateResponse"
           }
         }
       },
@@ -4427,11 +4246,7 @@
         "type": "object",
         "properties": {
           "UserTokenCreateResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenCreateResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenCreateResponse"
           }
         }
       },
@@ -4455,11 +4270,7 @@
         "type": "object",
         "properties": {
           "UserTokenDeleteResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenDeleteResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenDeleteResponse"
           }
         }
       },
@@ -4483,11 +4294,7 @@
         "type": "object",
         "properties": {
           "UserTokenListResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenListResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenListResponse"
           }
         }
       },
@@ -4511,11 +4318,7 @@
         "type": "object",
         "properties": {
           "UserTokenSetResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenSetResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenSetResponse"
           }
         }
       },
@@ -4539,11 +4342,7 @@
         "type": "object",
         "properties": {
           "UserTokenUnassignResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserTokenUnassignResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserTokenUnassignResponse"
           }
         }
       },
@@ -4567,11 +4366,7 @@
         "type": "object",
         "properties": {
           "UserUnlockResponse": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/tns_UserUnlockResponse"
-              }
-            ]
+            "$ref": "#/components/schemas/tns_UserUnlockResponse"
           }
         }
       },
