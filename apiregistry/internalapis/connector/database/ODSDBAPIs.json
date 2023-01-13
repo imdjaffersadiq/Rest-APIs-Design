@@ -660,6 +660,17 @@
                      }
                   }
                },
+                "timeDeposit": {
+                  "type": "object",
+                  "properties": {
+                     "account": {
+                        "type": "array",
+                        "items": {
+                           "$ref": "#/components/schemas/OneViewAccountType"
+                        }
+                     }
+                  }
+               },
                "alKhayrat": {
                   "type": "object",
                   "properties": {
@@ -1516,7 +1527,7 @@
                "portfolioValue": {
                   "$ref": "#/components/schemas/PortfolioValueType"
                },
-               "autolease": {
+               "autoLeaseInstallments": {
                   "$ref": "#/components/schemas/AutoLeaseInstallmentType"
                }
             }
