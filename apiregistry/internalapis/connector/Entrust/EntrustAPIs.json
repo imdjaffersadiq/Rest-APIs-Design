@@ -1530,13 +1530,13 @@
         "deprecated": false
       }
     },
-    "/v1/GetEntrustConnectorConfigXml": {
+    "/v1/GetConnectorConfig": {
       "get": {
         "tags": [
           "Entrust APIs"
         ],
         "description": "Retrieves Configuration details of the Entrust",
-        "operationId": "GetEntrustConnectorConfigXml",
+        "operationId": "GetConnectorConfig",
         "parameters": [
           {
             "name": "Authorization",
@@ -1565,7 +1565,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetEntrustConnectorConfigXmlResponse"
+                  "$ref": "#/components/schemas/GetConnectorConfigResponse"
                 }
               }
             }
@@ -2317,12 +2317,12 @@
           }
         }
       },
-      "GetEntrustConnectorConfigXmlResponseType": {
-        "title": "GetEntrustConnectorConfigXmlResponseType",
+      "GetConnectorConfigResponseType": {
+        "title": "GetConnectorConfigResponseType",
         "type": "object",
         "properties": {
           "success": {
-            "$ref": "#/components/schemas/GetEntrustConnectorConfigXmlType"
+            "$ref": "#/components/schemas/GetConnectorConfigType"
           },
           "fault": {
             "$ref": "../../../commonschemas/fault.json#/FaultType"
@@ -3160,15 +3160,15 @@
           }
         }
       },
-      "GetEntrustConnectorConfigXmlResponse": {
-        "title": "GetEntrustConnectorConfigXmlResponse",
+      "GetConnectorConfigResponse": {
+        "title": "GetConnectorConfigResponse",
         "required": [
-          "GetEntrustConnectorConfigXmlResponse"
+          "GetConnectorConfigResponse"
         ],
         "type": "object",
         "properties": {
-          "GetEntrustConnectorConfigXmlResponse": {
-            "$ref": "#/components/schemas/GetEntrustConnectorConfigXmlResponseType"
+          "GetConnectorConfigResponse": {
+            "$ref": "#/components/schemas/GetConnectorConfigResponseType"
           }
         }
       },
@@ -3539,8 +3539,8 @@
           }
         }
       },
-      "GetEntrustConnectorConfigXmlType": {
-        "title": "GetEntrustConnectorConfigXmlType",
+      "GetConnectorConfigType": {
+        "title": "GetConnectorConfigType",
         "type": "object",
         "properties": {
           "EntrustConnectorConfig": {
