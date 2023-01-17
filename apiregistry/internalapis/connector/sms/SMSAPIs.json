@@ -191,7 +191,13 @@
           "Parameter": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "object",
+              "properties":{
+                "isEncrypted" :{ 
+                  "$ref": "../../../commonschemas/schemas.json#/EncryptedText"
+                },
+                "value":{"type":"string"}
+              }
             }
           },
           "SMSLanguage": {
