@@ -1349,32 +1349,32 @@
         "deprecated": false
       }
     },
-    "/AuthenticateGenericChallenge": {
+    "/v1/AuthenticateGenericChallenge": {
       "post": {
         "tags": [
-          "EntrustWSI"
+          "Entrust APIs"
         ],
-        "summary": "AuthenticateGenericChallenge",
+        "description": "",
         "operationId": "AuthenticateGenericChallenge",
         "parameters": [
           {
-            "name": "ServiceHeader",
+            "name": "Authorization",
             "in": "header",
-            "description": "",
+            "description": "JWT bearer token",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/header_ServiceHeader"
+              "type": "string"
             }
           },
           {
-            "name": "Security",
+            "name": "ServiceHeader",
             "in": "header",
-            "description": "",
+            "description": "having channel details , locale",
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "#/components/schemas/wsse_Security"
+              "$ref": "../../../commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1392,11 +1392,80 @@
         "responses": {
           "200": {
             "description": "Successfully retrieved the response",
-            "headers": {},
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AuthenticateGenericChallengeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 Unauthorized request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 API Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "405 Method Not Allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../../../commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -1924,8 +1993,8 @@
   },
   "components": {
     "schemas": {
-      "tns_success": {
-        "title": "tns_success",
+      "success": {
+        "title": "success",
         "type": "object",
         "description": ""
       },
@@ -2116,8 +2185,8 @@
         },
         "description": ""
       },
-      "tns_AuthenticateGenericChallenge": {
-        "title": "tns_AuthenticateGenericChallenge",
+      "AuthenticateGenericChallengeRequestType": {
+        "title": "AuthenticateGenericChallengeRequestType",
         "required": [
           "UserId",
           "AuthenticationType",
@@ -2132,7 +2201,7 @@
             "type": "string"
           },
           "AuthenticationType": {
-            "$ref": "#/components/schemas/tns_AuthenticationType"
+            "$ref": "#/components/schemas/AuthenticationType"
           },
           "TokenCode": {
             "type": "string"
@@ -2146,12 +2215,12 @@
         },
         "description": ""
       },
-      "tns_AuthenticateGenericChallengeResponse": {
-        "title": "tns_AuthenticateGenericChallengeResponse",
+      "AuthenticateGenericChallengeResponseType": {
+        "title": "AuthenticateGenericChallengeResponseType",
         "type": "object",
         "properties": {
           "success": {
-            "$ref": "#/components/schemas/tns_success"
+            "$ref": "#/components/schemas/success"
           },
           "fault": {
             "$ref": "../../../commonschemas/fault.json#/FaultType"
@@ -2217,7 +2286,7 @@
         "type": "object",
         "properties": {
           "success": {
-            "$ref": "#/components/schemas/tns_success"
+            "$ref": "#/components/schemas/success"
           },
           "fault": {
             "$ref": "../../../commonschemas/fault.json#/FaultType"
@@ -2277,7 +2346,7 @@
         "type": "object",
         "properties": {
           "success": {
-            "$ref": "#/components/schemas/tns_success"
+            "$ref": "#/components/schemas/success"
           },
           "fault": {
             "$ref": "../../../commonschemas/fault.json#/FaultType"
@@ -2387,7 +2456,7 @@
         "type": "object",
         "properties": {
           "success": {
-            "$ref": "#/components/schemas/tns_success"
+            "$ref": "#/components/schemas/success"
           },
           "fault": {
             "$ref": "../../../commonschemas/fault.json#/FaultType"
@@ -3120,7 +3189,7 @@
         "type": "object",
         "properties": {
           "AuthenticateGenericChallenge": {
-            "$ref": "#/components/schemas/tns_AuthenticateGenericChallenge"
+            "$ref": "#/components/schemas/AuthenticateGenericChallengeRequestType"
           }
         }
       },
@@ -3132,7 +3201,7 @@
         "type": "object",
         "properties": {
           "AuthenticateGenericChallengeResponse": {
-            "$ref": "#/components/schemas/tns_AuthenticateGenericChallengeResponse"
+            "$ref": "#/components/schemas/AuthenticateGenericChallengeResponseType"
           }
         }
       },
@@ -3295,8 +3364,8 @@
         },
         "description": ""
       },
-      "tns_AuthenticationType": {
-        "title": "tns_AuthenticationType",
+      "AuthenticationType": {
+        "title": "AuthenticationType",
         "enum": [
           "GRID",
           "QA",
