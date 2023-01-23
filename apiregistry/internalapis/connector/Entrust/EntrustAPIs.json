@@ -3887,7 +3887,8 @@
           "LoadDate",
           "LastUsedDate",
           "Set",
-          "Comment"
+          "Comment",
+          "ActivationCode"
         ],
         "type": "object",
         "properties": {
@@ -3928,6 +3929,9 @@
             "type": "string"
           },
           "Comment": {
+            "type": "string"
+          },
+          "ActivationCode": {
             "type": "string"
           }
         },
