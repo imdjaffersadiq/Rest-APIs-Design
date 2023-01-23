@@ -16,7 +16,7 @@
 				"tags": [
 					"Application Config Store API"
 				],
-				"description": "Retrieves distinct Config Store Categories like Accounts, Customer, CreditCard etc.",
+				"description": "Retrieves Config Store Categories like Accounts, Customer, CreditCard etc. or corresponding list of files based on Category",
 				"operationId": "GetConfigStoreCategories",
 				"parameters": [
 					{
@@ -37,6 +37,14 @@
 						"style": "simple",
 						"schema": {
 							"$ref": "../../../commonschemas/header.json#/ServiceHeader"
+						}
+					},
+					{
+						"name": "categoryName",
+						"in": "query",
+						"description": "Category name like Accounts, Customer, CreditCard etc.",
+						"schema": {
+							"type": "string"
 						}
 					}
 				],
@@ -653,7 +661,7 @@
 			"GetConfigStoreCategoriesResponseType": {
 				"type": "object",
 				"properties": {
-					"categoryList": {
+					"data": {
 						"type": "array",
 						"items": {
 							"type": "string"
