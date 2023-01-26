@@ -35,7 +35,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -66,7 +66,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -76,7 +76,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -86,7 +86,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -96,7 +96,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -106,7 +106,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -116,7 +116,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -126,7 +126,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -150,7 +150,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -206,7 +206,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -237,7 +237,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -247,7 +247,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -257,7 +257,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -267,7 +267,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -277,7 +277,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -287,7 +287,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -297,7 +297,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -321,7 +321,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -377,7 +377,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -408,7 +408,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -418,7 +418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -428,7 +428,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -438,7 +438,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -448,7 +448,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -458,7 +458,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -468,7 +468,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "../../commonschemas/httpError.json#/httpErrorResponse"
+                  "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/httpError.json#/httpErrorResponse"
                 }
               }
             }
@@ -492,7 +492,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -538,7 +538,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -584,7 +584,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -630,7 +630,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -676,7 +676,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -722,7 +722,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -768,7 +768,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -814,7 +814,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -860,7 +860,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -906,7 +906,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -952,7 +952,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -998,7 +998,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1044,7 +1044,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1090,7 +1090,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1136,7 +1136,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1182,7 +1182,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1228,7 +1228,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1274,7 +1274,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1320,7 +1320,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1366,7 +1366,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1412,7 +1412,7 @@
             "required": true,
             "style": "simple",
             "schema": {
-              "$ref": "../../commonschemas/header.json#/ServiceHeader"
+              "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/header.json#/ServiceHeader"
             }
           }
         ],
@@ -1454,11 +1454,11 @@
         "type": "object",
         "properties": {
           "ecnId": {
-            "$ref": "../../commonschemas/schemas.json#/ECNId",
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/ECNId",
             "description": "Short Customer Information Number"
           },
           "accountId": {
-            "$ref": "../../commonschemas/schemas.json#/AccountId",
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/AccountId",
             "description": "Customer Account ID"
           },
           "filter": {
@@ -1503,7 +1503,7 @@
             "$ref": "#/components/schemas/CustomerInquiryType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         }
       },
@@ -1652,7 +1652,7 @@
             "$ref": "#/components/schemas/tns_UpdateCustomerResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -1719,10 +1719,10 @@
         "type": "object",
         "properties": {
           "ecnId": {
-            "$ref": "../../commonschemas/schemas.json#/ECNId"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/ECNId"
           },
           "mobileNumber": {
-            "$ref": "../../commonschemas/schemas.json#/MobileNumber",
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/MobileNumber",
             "description": "Customer Mobile Number"
           },
           "purpose": {
@@ -1770,7 +1770,7 @@
             "description": "this defines whether message to be sent by sms or email.Possible values,\nSMS, EMAIL"
           },
           "cif": {
-            "$ref": "../../commonschemas/schemas.json#/CIF"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/CIF"
           },
           "mail": {
             "$ref": "#/components/schemas/mailType"
@@ -1816,7 +1816,7 @@
             "$ref": "#/components/schemas/OTPType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -1873,7 +1873,7 @@
             "$ref": "#/components/schemas/tns_OnBoardSiteImageResonseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -1887,7 +1887,7 @@
         "type": "object",
         "properties": {
           "ecnId": {
-            "$ref": "../../commonschemas/schemas.json#/ECNId",
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/ECNId",
             "description": "Shortcut for Customer Information Number."
           },
           "tokenType": {
@@ -1895,7 +1895,7 @@
             "description": "OTP or TOKEN"
           },
           "code": {
-            "$ref": "../../commonschemas/schemas.json#/EncryptedText",
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/EncryptedText",
             "description": "Customer challenge response\n\n\t\t\t\t\t\t\tÂ· Must be numeric\n\t\t\t\t\t\t\tand encrypted using DES algorithm the EcnId\n\t\t\t\t\t\t\tvalue should be the\n\t\t\t\t\t\t\tkey on the algorithm"
           },
           "group": {
@@ -1905,7 +1905,7 @@
             "type": "string"
           },
           "pvn": {
-            "$ref": "../../commonschemas/schemas.json#/EncryptedText"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/EncryptedText"
           }
         },
         "description": ""
@@ -1918,7 +1918,7 @@
             "$ref": "#/components/schemas/AuthenticateTokenType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -1985,7 +1985,7 @@
             "$ref": "#/components/schemas/tns_OnBoardTokenType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2041,7 +2041,7 @@
             "$ref": "#/components/schemas/tns_OnBoardPCTrustType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2065,7 +2065,7 @@
         "type": "object",
         "properties": {
           "callerId": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           },
           "contactId": {
             "type": "string",
@@ -2084,10 +2084,10 @@
             "description": "The value of FieldName"
           },
           "international": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           },
           "oneTimePass": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           }
         },
         "description": ""
@@ -2107,22 +2107,22 @@
         "type": "object",
         "properties": {
           "callerId": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           },
           "hardToken": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           },
           "oneTimePass": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           },
           "siteImage": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           },
           "softToken": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           },
           "trustedPC": {
-            "$ref": "../../commonschemas/schemas.json#/trueOrFalseTypeOptional"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/schemas.json#/trueOrFalseTypeOptional"
           }
         }
       },
@@ -2701,7 +2701,7 @@
             "$ref": "#/components/schemas/tns_AuthenticateIBSResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2724,7 +2724,7 @@
             "$ref": "#/components/schemas/tns_AuthenticateIBSResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2837,7 +2837,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2877,7 +2877,7 @@
             "$ref": "#/components/schemas/tns_MFATokenCreateResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2914,7 +2914,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -2957,7 +2957,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3004,7 +3004,7 @@
             "$ref": "#/components/schemas/tns_PVNRetrievalResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3063,7 +3063,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3094,7 +3094,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3125,7 +3125,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3170,7 +3170,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3204,7 +3204,7 @@
             "$ref": "#/components/schemas/tns_PVNAutoGenerationResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3248,7 +3248,7 @@
             "type": "string"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3282,7 +3282,7 @@
             "$ref": "#/components/schemas/tns_TokenDetailsType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3344,7 +3344,7 @@
             "$ref": "#/components/schemas/tns_MFAUserRegistrationResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3404,7 +3404,7 @@
             "type": "boolean"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3453,7 +3453,7 @@
             "$ref": "#/components/schemas/tns_SetTokenStateResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3573,7 +3573,7 @@
             "$ref": "#/components/schemas/CustomerInquiryType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3604,7 +3604,7 @@
             "$ref": "#/components/schemas/tns_EntrustUserDetailsType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
@@ -3661,7 +3661,7 @@
             "$ref": "#/components/schemas/tns_OTPForAccountIdResponseType"
           },
           "fault": {
-            "$ref": "../../commonschemas/fault.json#/FaultType"
+            "$ref": "http://gogs-gogs.apps.ocp4-cluster-001.int.dhdigital.co.in/Darkhorse/Rest-Apis-Design/raw/master/apiregistry/commonschemas/fault.json#/FaultType"
           }
         },
         "description": ""
